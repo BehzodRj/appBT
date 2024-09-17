@@ -1,0 +1,14 @@
+.BalanceToolbar {
+        /* --background: #00a9e9 !important;  */
+        --background: #216ac9 !important; 
+}
+
+.List {
+    background:#216ac9;
+    margin: 10px;
+    border-radius: 10px;
+}
+ 
+.List .item {
+    --background: transparent;
+}

@@ -1,0 +1,247 @@
+
+
+.content {
+    /* --background:  #4965f6 !important;  */
+    /* --background: #fcfdfd !important;  */
+    --background:#f9f9fb !important; 
+}
+.fon {
+    /* --background:  #4965f6 !important;  */
+    --background: #ffffff !important; 
+    /* color:#ffffff !important; */
+}
+
+.group {
+    /* --background:  #3D5BF6 !important; */
+    /* --background:  #4261f5 !important; */
+    --background:  #ffffff!important;
+    border-radius: 10px; 
+    
+
+}
+.menuButton {
+    color: darkslategrey;
+}
+.tabBar {
+    --background: #fff;
+}
+.group .item {
+    /* --background:  #3D5BF6 !important; */
+    /* --background:  #4261f5 !important; */
+    --background:  #fffff !important;
+    color: #029ad6;
+    font-size: 18px;
+    /* --background:transparent !important; */
+}
+.group .item .name {
+    font-weight: 500;
+}
+.group .item ion-icon.md {
+    color:#029ad6;
+}
+.fon .item {
+    /* --background:  #4965f6 !important;  */
+    --background: #ffffff !important; 
+    /* color:#ffffff !important; */
+    
+}
+.flex {
+    display: grid;
+    /* justify-content: space-between; */
+    background-color: transparent;
+    align-items: center;
+}
+
+.flex .item {
+    width: 100% !important;
+}
+
+.flex .listItem {
+    width: 100%;
+   background: transparent;
+ 
+}
+.flex .select {
+   background: transparent;
+ 
+}
+
+.listItem .item ion-label {
+    padding-left: 10px;
+    
+}
+
+.select {
+    display: flex;
+    justify-content: space-evenly;
+    /* background:  #3D5BF6 !important; */
+    /* background:  #4261f5 !important; */
+    background:  #ffffff !important;
+    /* background: #fff !important; */
+    /* color:#fff; */
+    color:#029ad6;
+}
+
+ion-card {
+    border-radius:10px;
+}
+
+
+.select .item {
+    /* --background:  #3D5BF6 !important; */
+    /* --background:  #4261f5 !important; */
+    --background:  #ffffff !important;
+    /* color:#fff; */
+    color:#029ad6;
+    /* --background: #fff!important; */
+    /* color:#000; */
+}
+.select .icon-inner {
+    color:#fff !important;
+}
+.select .textLS {
+    width: 140% !important;
+    font-size: 17px;
+}
+ .textBalance {
+    /* width: 40%; */
+    font-size: 17px;
+
+}
+ .textCredit {
+    /* width: 30%; */
+    font-size: 17px;
+}
+.balanceCard {
+    /* background:  #3D5BF6 !important; */
+    background: #fff !important;
+}
+
+.balanceCard .item {
+    /* --background:  #3D5BF6 !important;
+    color:#fff; */
+    --background: #fff!important;
+    /* color:#000; */
+    color:#929599;
+}
+.custom-select .icon-inner, .ionicon, svg {
+    
+    color:#fff !important;
+}
+
+.custom-select {
+    --color: #fff; /* Задайте цвет стрелки */
+    --icon-color-selected: blue; /* Задайте цвет стрелки для выбранных элементов */
+  }
+  
+  .custom-select .select-icon {
+    color: var(--color); /* Задайте цвет стрелки */
+  }
+  
+  .custom-select .select-icon.selected {
+    color: var(--icon-color-selected); /* Задайте цвет стрелки для выбранных элементов */
+  }
+.Balance{
+    width: 100%;
+    text-align: center !important;
+    display: grid;
+    /* color: #000; */
+    color: #929599;
+}
+
+.footerButton {
+    display: grid;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footerButton .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .myIp {
+    padding-right: 10px;
+} */
+.toolbar {
+    /* --background: #00a9e9 !important;  */
+    --background: #fcfdfd !important; 
+}
+
+/* .footer .full-width {
+    width: 100%;
+} */
+
+ion-img.logoApp.md {
+    width: 100px;
+    padding-right: 15px;
+}
+
+.toolbar .myIp {
+    color:#0B7AE8;
+    font-weight: bold;
+    padding-left: 20%;
+
+}
+
+
+.avatar {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 14%;
+    padding-bottom: 10%;
+    
+}
+.avatar img {
+    max-width: 40%;
+}
+
+.package{
+    margin-bottom: -8px;
+    --background:transparent;
+    /* color:#000; */
+    color:#ffffff;
+}
+
+.package ion-label {
+font-size: 20px !important;
+font-weight: 500;
+margin: 0px;
+padding: 0px;
+}
+
+.activePackage {
+    /* background:  #3D5BF6 !important;  */
+    background:  #fff !important; 
+    color:#000;
+    display: grid;
+}
+.activePackage .item {
+    /* --background:  #3D5BF6 !important;  */
+    --background:  #fff !important; 
+    color:#000;
+    padding-right: 15px;
+    /* display:block; */
+}
+/* .strong {
+    font-size: 18px;
+    color:#000;
+    padding-left:16px;
+    padding-top: 20px;
+} */
+.strong {
+    font-size: 18px;
+    color: #fff;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -9px;
+    background: #3e5aec;
+}
+
+/* .namePage {
+    font-size: 20px;
+    font-weight: 600;
+} */

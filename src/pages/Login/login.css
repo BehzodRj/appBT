@@ -1,0 +1,78 @@
+/* body {
+   background: #00a9e9 !important; 
+} */
+.content {
+   /* background: #00a9e9 !important;  */
+   /* background: #244c65 !important;  */
+   background-image: url(../../assets/img/fonApp.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.headerLogin  {
+   --background: #00a9e9 !important; 
+   --box-shadow: none !important;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    border-radius: 0px;
+  }
+  
+  .centered-content {
+    text-align: center;
+  }
+
+  .imgLogo {
+    width: 80%;
+   
+  }
+
+  .imgLogo .img {
+   position: relative;
+   top: -54%;
+  }
+  .imgLogo .loginText {
+    position: relative;
+    top: -5%;
+    font-size: 22px;
+    /* color: aliceblue; */
+    color: #ffffff !important;
+   }
+
+  .content .login {
+    border-radius: 20px;
+    height: 49px;
+    margin-bottom: 10px;
+    --background: #ffffff !important;
+    color: black;
+  }
+  .content .password {
+    border-radius: 20px;
+    height: 49px;
+    margin-bottom: 10px;
+    --background: #ffffff !important;
+    color: black;
+  }
+
+  .content .buttonLogin {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+  }
+  .content .loginButton {
+    /* --background: #495ed6; */
+    --background: #4a91ce;
+    height: 39px;
+    width: 112px;
+    margin-top: 22px;
+    font-size: 19px;
+    border-radius: 50px !important;
+    margin-bottom: -100px;
+}
+

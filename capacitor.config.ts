@@ -2,11 +2,18 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'myApp',
+  appName: 'myBabilon-T',
   webDir: 'dist',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    
+  },
+  plugins:{
+    CapacitorHttp:{
+      enabled:true,
+    }
   }
+ 
 };
 
 export default config;

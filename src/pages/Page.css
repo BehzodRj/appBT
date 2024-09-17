@@ -1,0 +1,24 @@
+
+.footerButton {
+    display: grid;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footerButton .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.myIp {
+    padding-right: 10px;
+}
+.toolbar {
+    /* --background: #00a9e9 !important;  */
+    --background: #216ac9 !important; 
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
