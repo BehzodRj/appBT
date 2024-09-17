@@ -78,8 +78,6 @@ const LoginForm: React.FC = () => {
     }
     setIsLoading(true);
     doPost();
-
-
   };
 
   return (
