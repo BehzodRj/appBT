@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet } from '@ionic/react';
 import './login.css';
-import axios from 'axios';
 import logo from '../../assets/img/whiteLogo.png';
-import { Http, HttpOptions } from '@capacitor-community/http';
-import { CapacitorHttp, HttpResponse } from '@capacitor/core';
-import Menu from '../../components/Menu';
+import { CapacitorHttp } from '@capacitor/core';
 
 const LoginForm: React.FC = () => {
   const [username, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory(); // Получаем объект history для управления роутингом
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    
+    if(token != null) {
+      history.push('/profile')
+    }
+   }, []);
+   
   console.log('Email:');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const doPost = async () => {
@@ -78,8 +83,6 @@ const LoginForm: React.FC = () => {
     }
     setIsLoading(true);
     doPost();
-
-
   };
 
   return (
@@ -98,7 +101,7 @@ const LoginForm: React.FC = () => {
           <IonLabel className='loginText'>Вход в личный кабинет</IonLabel>
           <IonItem className='login'>
             <IonLabel position="floating">Email</IonLabel>
-            <IonInput aria-label="Email" type="email" value={username} onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
+            <IonInput type="email" value={username} onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
           </IonItem>
 
           <IonItem className='password'>

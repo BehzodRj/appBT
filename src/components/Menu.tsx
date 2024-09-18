@@ -58,11 +58,11 @@ const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 const Menu: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
-
+  
   const handleLogout = async () => {
     try {
       await authService.logout(); // Вызываем функцию logout из authService
-      history.push('/login'); // Перенаправляем пользователя на страницу входа
+      window.location = "/login" // Перенаправляем пользователя на страницу входа
     } catch (error) {
       console.error('Ошибка при выходе', error);
     }
