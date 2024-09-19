@@ -46,7 +46,7 @@ const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 const Menu: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
-
+  
   const handleLogout = async () => {
     try {
       // await authService.logout();
