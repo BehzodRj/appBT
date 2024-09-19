@@ -33,6 +33,20 @@ import Tariffs from './pages/Tariffs/Tariffs';
 import Package from './pages/Package/Package';
 import NewsOne from './pages/News/NewsOne';
 import AddBalance from './pages/AddBalance/AddBalance';
+import IpTv from './pages/IpTv/IpTv';
+import Turbo from './pages/Turbo/Turbo';
+import Lte from './pages/Lte/Lte';
+import Optom from './pages/Optom/Optom';
+import Internet from './pages/Internet/Internet';
+import Domain from './pages/Domain/Domain';
+import Hosting from './pages/Hosting/Hosting';
+import Vps from './pages/Vps/Vps';
+import LteEvo from './pages/Lte/LteEvo';
+import TariffsLte from './pages/Lte/Tarifs';
+import Dushanbe from './pages/Internet/Dushanbe';
+import TariffsDushanbe from './pages/Internet/TariffsDushanbe';
+import TariffsWithTraffic from './pages/Internet/TariffsWithTraffic';
+import Traffic from './pages/Internet/Traffic';
 
 setupIonicReact();
 
@@ -46,6 +60,7 @@ const App: React.FC = () => {
           <IonRouterOutlet id="main">
           {/* <Route path="/login" component={Login} />
         <Redirect exact from="/" to="/login" /> */}
+        <Route path="/login" component={Login} exact />
             <Route path="/" exact={true}>
               <Login />
             </Route>
@@ -55,6 +70,20 @@ const App: React.FC = () => {
             <Route path="/package" component={()=><Package/>} />
             <Route path="/login" component={()=><Login/>} />
             <Route path="/add-balance" component={()=><AddBalance/>} />
+            <Route path="/tv" component={()=><IpTv/>} />
+            <Route path="/turbo" component={()=><Turbo/>} />
+            <Route path="/lte" component={()=><Lte/>} />
+            <Route path="/optom" component={()=><Optom/>} />
+            <Route path="/internet" component={()=><Internet/>} />
+            <Route path="/domain" component={()=><Domain/>} />
+            <Route path="/hosting" component={()=><Hosting/>} />
+            <Route path="/vps" component={()=><Vps/>} />
+            <Route path="/LteEvo" component={()=><LteEvo/>} />
+            <Route path="/tariffsLte" component={()=><TariffsLte/>} />
+            <Route path="/tarifs_dushanbe" component={()=><TariffsDushanbe/>} />
+            <Route path="/dushanbe" component={()=><Dushanbe/>} />
+            <Route path="/with_traffic" component={()=><TariffsWithTraffic/>} />
+            <Route path="/traffic" component={()=><Traffic/>} />
             {/* <Route path="/news" component={NewsOne} /> */}
 
             {/* <Route path="/folder/:name" exact={true}>

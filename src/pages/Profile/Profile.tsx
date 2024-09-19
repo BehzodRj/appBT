@@ -98,13 +98,13 @@ const Profile: React.FC = () => {
       doGet();
 
     } else {
-      history.push('/');
+      window.location.href = '/login';
     }
 
 
     console.log('Token:', storedToken);
     console.log('User ID:', storedUserId);
-  }, []);
+  }, [history]);
 
   useEffect(() => {
     if (option.length > 0) {
@@ -335,7 +335,7 @@ const Profile: React.FC = () => {
           <IonList className='activePackage'>
             <IonItem className='item' lines='none'>
               <IonLabel>Наработка трафика:</IonLabel>
-              <IonLabel slot='end'>{traffic}</IonLabel>
+              <IonLabel slot='end'>{traffic} мб</IonLabel>
             </IonItem>
           </IonList>
         </IonCard>
@@ -350,24 +350,20 @@ const Profile: React.FC = () => {
       </IonContent>
       {/* <TabsBar/> */}
       <IonTabBar slot="bottom" className='tabBar'>
-        <IonTabButton tab="Tarifs" href="/tariffs">
+        {/* <IonTabButton tab="Tarifs" href="/tariffs">
           <IonIcon icon={globeOutline} />
           <IonLabel>Тарифы</IonLabel>
         </IonTabButton>
         <IonTabButton tab="SpeedTest" href="/package">
           <IonIcon icon={personCircleOutline} />
           <IonLabel>Пакеты</IonLabel>
-        </IonTabButton>
+        </IonTabButton> */}
 
         <IonTabButton tab="home" href="/main">
           <IonIcon icon={home} />
           <IonLabel>Главная</IonLabel>
         </IonTabButton>
 
-        {/* <IonTabButton tab="library" href="/card">
-          <IonIcon icon={mapSharp} />
-          <IonLabel>Карта</IonLabel>
-        </IonTabButton> */}
 
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
