@@ -39,22 +39,30 @@
   }
   .imgLogo .loginText {
     position: relative;
-    top: -5%;
+    top: -10%;
     font-size: 22px;
     /* color: aliceblue; */
     color: #ffffff !important;
    }
 
+   .content .login.ios {
+    height: 43px;
+    margin-top: 30px;
+   }
+   .content .password.ios {
+    height: 43px;
+   }
+
   .content .login {
     border-radius: 20px;
-    height: 49px;
+    height: 46px;
     margin-bottom: 10px;
     --background: #ffffff !important;
     color: black;
   }
   .content .password {
     border-radius: 20px;
-    height: 49px;
+    height: 46px;
     margin-bottom: 10px;
     --background: #ffffff !important;
     color: black;

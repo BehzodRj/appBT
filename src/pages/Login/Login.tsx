@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet } from '@ionic/react';
 import './login.css';
@@ -13,6 +13,7 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState('');
   const history = useHistory(); // Получаем объект history для управления роутингом
 
+  
   console.log('Email:');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const doPost = async () => {
@@ -54,7 +55,7 @@ const LoginForm: React.FC = () => {
       setIsLoading(false);
       if (response.status == 200) {
         // history.push('/main');
-        history.push('/profile');
+        history.push('/main');
       } else if (response.status == 401) {
         setIsLoading(false);
         alert('Неверный логин или парол!');
@@ -81,7 +82,15 @@ const LoginForm: React.FC = () => {
 
 
   };
+  useEffect(() => {
+    // Проверка наличия токена
+    const token = localStorage.getItem('token');
 
+    if (token != null) {
+      // Если токен существует, направляем на защищенную страницу (например, dashboard)
+      history.push('/main');
+    } 
+  }, [history]);
   return (
 
     <IonContent>
@@ -96,15 +105,15 @@ const LoginForm: React.FC = () => {
 
           <IonImg className='img' src={logo} alt="logo" ></IonImg>
           <IonLabel className='loginText'>Вход в личный кабинет</IonLabel>
-          <IonItem className='login'>
-            <IonLabel position="floating">Email</IonLabel>
-            <IonInput aria-label="Email" type="email" value={username} onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
+          <IonItem className='login' lines='none'>
+            {/* <IonLabel position="floating">Email</IonLabel> */}
+            <IonInput aria-label="Email" placeholder='Логин' type="email" value={username} onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
           </IonItem>
 
-          <IonItem className='password'>
-            <IonLabel position="floating">Password</IonLabel>
+          <IonItem className='password' lines='none'>
+            {/* <IonLabel position="floating">Password</IonLabel> */}
             {/* <IonInput type="password" value={password} onIonChange={(e) => setPassword(e.detail.value!)}></IonInput> */}
-            <IonInput aria-label="password" type="password" value={password} onIonChange={(e) => { const newPassword = e.detail.value || ''; setPassword(newPassword); }}></IonInput>
+            <IonInput aria-label="password" type="password" placeholder='Парол' value={password} onIonChange={(e) => { const newPassword = e.detail.value || ''; setPassword(newPassword); }}></IonInput>
           </IonItem>
           <div className='buttonLogin'>
 

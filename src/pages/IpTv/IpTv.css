@@ -1,0 +1,31 @@
+.ListTV {
+    background: #f4f4f4;
+    color: #000000;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+.ListTV ion-list-header {
+    color:#000000;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ListTV .item {
+    --background: transparent;
+    color: #000000;
+    font-size: 18px;
+}
+
+.ListTV p {
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 17px;
+}
+.TvText {
+    padding-left: 15px;
+    font-size: 18px;
+}

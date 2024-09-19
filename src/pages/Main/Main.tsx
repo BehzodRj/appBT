@@ -35,10 +35,38 @@ const Main: React.FC = () => {
   const goToAddBalance = () => {
     history.push('/add-balance');
   };
+  const goToTv = () => {
+    history.push('/tv');
+  };
+  const goToTurbo = () => {
+    history.push('/turbo');
+  };
+  const goToLte = () => {
+    history.push('/lte');
+  };
+  const goToOptom = () => {
+    history.push('/optom');
+  };
+  const goToInternet = () => {
+    history.push('/internet');
+  };
+  const goToVps = () => {
+    history.push('/vps');
+  };
+  const goToDomain = () => {
+    history.push('/domain');
+  };
+  const goToHosting = () => {
+    history.push('/hosting');
+  };
+
+
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
   console.log("Profileee");
+
+
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -105,7 +133,7 @@ const Main: React.FC = () => {
       doGet();
 
     } else {
-      history.push('/');
+      window.location.href = '/login';
     }
 
 
@@ -113,7 +141,8 @@ const Main: React.FC = () => {
     console.log('User ID:', storedUserId);
 
 
-  }, []);
+  }, [history]);
+
   useEffect(() => {
     if (option.length > 0) {
       // Установка первого значения из списка опций
@@ -254,22 +283,22 @@ const Main: React.FC = () => {
           </div>
           {/* <IonButton className="full-width" routerLink='/login'> Выход</IonButton> */}
         </IonList>
-        <IonList  className='AddBalanceList'>
+        <IonList className='AddBalanceList'>
           <div className='AddBalanceHome'>
-           
 
-              <IonButton className='addBalance' onClick={goToAddBalance} >Пополнить баланс</IonButton>
 
-       
-         
-              <IonButton className='autoPay' onClick={goToAddBalance} >Включить автоплатеж</IonButton>
-            
+            <IonButton className='addBalance' onClick={goToAddBalance} >Пополнить баланс</IonButton>
+
+
+
+            <IonButton className='autoPay' onClick={goToAddBalance} >Включить автоплатеж</IonButton>
+
 
           </div>
 
         </IonList>
 
-        <IonItem className='SomeText' lines="none">
+        {/* <IonItem className='SomeText' lines="none">
           <IonLabel>
             Популярное
           </IonLabel>
@@ -277,8 +306,8 @@ const Main: React.FC = () => {
 
         <div className='flexServices'>
 
-          <IonRouterLink routerLink="/news" style={{ textDecoration: 'none' }}>
-            <IonCard color="primary" className='card1'>
+      
+            <IonCard color="primary" className='card1'  onClick={goToTurbo}>
               <IonCardHeader>
                 <IonCardTitle>Turbo</IonCardTitle>
               </IonCardHeader>
@@ -286,9 +315,9 @@ const Main: React.FC = () => {
               <IonCardContent>Turbo Скорость</IonCardContent>
             </IonCard>
 
-          </IonRouterLink>
+        
 
-          <IonCard color="secondary" className='card2'>
+          <IonCard color="secondary" className='card2'  onClick={goToTv}>
             <IonCardHeader>
               <IonCardTitle>IPTV</IonCardTitle>
             </IonCardHeader>
@@ -296,21 +325,21 @@ const Main: React.FC = () => {
             <IonCardContent>Телевидение</IonCardContent>
           </IonCard>
 
-          <IonCard color="secondary" className='card3'>
+          <IonCard color="secondary" className='card3'  onClick={goToOptom}>
             <IonCardHeader>
               <IonCardTitle>Оптом</IonCardTitle>
             </IonCardHeader>
 
             <IonCardContent>Пакет Оптом</IonCardContent>
           </IonCard>
-        </div>
+        </div> */}
         <IonItem className='SomeText' lines="none">
           <IonLabel>
             Услуги
           </IonLabel>
         </IonItem>
         <div className='flexServices'>
-          <IonCard color="primary" className='card1 first'>
+          <IonCard color="primary" className='card1 first' onClick={goToInternet}>
             <IonCardHeader>
               <IonCardTitle>Internet</IonCardTitle>
             </IonCardHeader>
@@ -318,7 +347,7 @@ const Main: React.FC = () => {
             <IonCardContent>Домашный Интернет</IonCardContent>
           </IonCard>
 
-          <IonCard color="secondary" className='card2'>
+          <IonCard color="secondary" className='card2' onClick={goToLte}>
             <IonCardHeader>
               <IonCardTitle>LTE</IonCardTitle>
             </IonCardHeader>
@@ -326,25 +355,23 @@ const Main: React.FC = () => {
             <IonCardContent>Беспроводной Интернет</IonCardContent>
           </IonCard>
 
-          <IonCard color="secondary" className='card2'>
+          <IonCard color="secondary" className='card2' onClick={goToTv}>
             <IonCardHeader>
               <IonCardTitle>IPTV</IonCardTitle>
             </IonCardHeader>
 
             <IonCardContent>Телевидение</IonCardContent>
           </IonCard>
-          <IonRouterLink routerLink="/news" style={{ textDecoration: 'none' }}>
-            <IonCard color="primary" className='card1'>
-              <IonCardHeader>
-                <IonCardTitle>VPS</IonCardTitle>
-              </IonCardHeader>
+          {/* <IonCard color="primary" className='card1' onClick={goToVps}>
+            <IonCardHeader>
+              <IonCardTitle>VPS</IonCardTitle>
+            </IonCardHeader>
 
-              <IonCardContent>Виртуальный сервер</IonCardContent>
-            </IonCard>
+            <IonCardContent>Виртуальный сервер</IonCardContent>
+          </IonCard>
 
-          </IonRouterLink>
 
-          <IonCard color="secondary" className='card2'>
+          <IonCard color="secondary" className='card2' onClick={goToDomain}>
             <IonCardHeader>
               <IonCardTitle>Домен</IonCardTitle>
             </IonCardHeader>
@@ -352,15 +379,52 @@ const Main: React.FC = () => {
             <IonCardContent>Домен для сайта</IonCardContent>
           </IonCard>
 
-          <IonCard color="secondary" className='card3'>
+          <IonCard color="secondary" className='card3' onClick={goToHosting}>
             <IonCardHeader>
               <IonCardTitle>Хостинг</IonCardTitle>
             </IonCardHeader>
 
             <IonCardContent>Хостинг для сайта</IonCardContent>
-          </IonCard>
+          </IonCard> */}
         </div>
         <IonItem className='SomeText' lines="none">
+          <IonLabel>
+            Тех поддержа
+          </IonLabel>
+        </IonItem>
+        <div className='contact'>
+          <a href="tel:+992446006060">
+            <IonCard color="secondary" className='card'>
+              <IonCardHeader>
+                <IonCardTitle>Call-Center</IonCardTitle>
+              </IonCardHeader>
+
+              <IonCardContent>44 600 6060</IonCardContent>
+            </IonCard>
+          </a>
+
+
+          <a href="https://t.me/bt_cyber_bot">
+            <IonCard color="secondary" className='card'>
+              <IonCardHeader>
+                <IonCardTitle>Telegram</IonCardTitle>
+              </IonCardHeader>
+
+              <IonCardContent>Cyber_bot</IonCardContent>
+            </IonCard>
+          </a>
+          <a href="https://webim.babilon-t.tj/client.php?locale=ru">
+             <IonCard color="secondary" className='card'>
+            <IonCardHeader>
+              <IonCardTitle>Live</IonCardTitle>
+            </IonCardHeader>
+
+            <IonCardContent>Онлайн чат</IonCardContent>
+          </IonCard>
+          </a>
+         
+        </div>
+        {/* <IonItem className='SomeText' lines="none">
           <IonLabel>
             Новости
           </IonLabel>
@@ -394,7 +458,7 @@ const Main: React.FC = () => {
 
             <IonCardContent>Пакет Оптом</IonCardContent>
           </IonCard>
-        </div>
+        </div> */}
         {/* <IonCard className='LargeCard' color="tertiary">
           <IonCardHeader>
             <IonCardTitle>Card Title</IonCardTitle>
@@ -408,24 +472,19 @@ const Main: React.FC = () => {
       </IonContent>
 
       <IonTabBar slot="bottom" className='tabBar'>
-        <IonTabButton tab="Tarifs" href="/tariffs">
+        {/* <IonTabButton tab="Tarifs" href="/tariffs">
           <IonIcon icon={globeOutline} />
           <IonLabel>Тарифы</IonLabel>
         </IonTabButton>
         <IonTabButton tab="SpeedTest" href="/package">
           <IonIcon icon={personCircleOutline} />
           <IonLabel>Пакеты</IonLabel>
-        </IonTabButton>
+        </IonTabButton> */}
 
         <IonTabButton tab="home" href="/main">
           <IonIcon icon={home} />
           <IonLabel>Главная</IonLabel>
         </IonTabButton>
-
-        {/* <IonTabButton tab="library" href="/card">
-          <IonIcon icon={mapSharp} />
-          <IonLabel>Карта</IonLabel>
-        </IonTabButton> */}
 
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />

@@ -1,0 +1,13 @@
+.ListInternet {
+    background: #ffffff;
+}
+
+.ListInternet .item {
+    --background: transparent;
+    color: black;
+    font-size: 18px;
+}
+
+.ListInternet .item ion-icon {
+    color:#a1a1a1;
+}

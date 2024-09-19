@@ -18,6 +18,8 @@ import {
   IonToolbar,
   IonButtons,
   IonImg,
+  IonBackButton,
+  IonTitle,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
 import './Package.css';
@@ -160,7 +162,7 @@ const Package: React.FC = () => {
   return (
     <IonPage>
       <IonContent className='content'>
-        <IonHeader className='header'>
+        {/* <IonHeader className='header'>
           <IonToolbar className='toolbar'>
             <IonButtons slot="start" className='menuButton'>
               <IonMenuButton />
@@ -168,7 +170,15 @@ const Package: React.FC = () => {
             <IonLabel className='myIp'> Пакеты</IonLabel>
             <IonImg className='logoApp' slot="end" src={logoApp} alt="logo"></IonImg>
           </IonToolbar>
-        </IonHeader>
+        </IonHeader> */}
+         <IonHeader>
+                <IonToolbar className='BalanceToolbar'>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref="/internet" />
+                    </IonButtons>
+                    <IonTitle>Актуальные пакеты</IonTitle>
+                </IonToolbar>
+            </IonHeader>
         {serviceInfoElements}
         {serviceInfoErrorApi}
         <IonLoading isOpen={isLoading} message="Loading..." spinner="circles" />
@@ -187,7 +197,7 @@ const Package: React.FC = () => {
           </IonButton>
         </div>
       </IonModal>
-      <IonTabBar slot="bottom" className='tabBar'>
+      {/* <IonTabBar slot="bottom" className='tabBar'>
         <IonTabButton tab="Tarifs" href="/tariffs">
           <IonIcon icon={globeOutline} />
           <IonLabel>Тарифы</IonLabel>
@@ -200,15 +210,11 @@ const Package: React.FC = () => {
           <IonIcon icon={home} />
           <IonLabel>Главная</IonLabel>
         </IonTabButton>
-        {/* <IonTabButton tab="library" href="/card">
-          <IonIcon icon={mapSharp} />
-          <IonLabel>Карта</IonLabel>
-        </IonTabButton> */}
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
           <IonLabel>Мой Профил</IonLabel>
         </IonTabButton>
-      </IonTabBar>
+      </IonTabBar> */}
     </IonPage>
   );
 };

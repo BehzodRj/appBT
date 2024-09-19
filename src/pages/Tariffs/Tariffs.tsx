@@ -18,6 +18,8 @@ import {
   IonToolbar,
   IonButtons,
   IonImg,
+  IonBackButton,
+  IonTitle,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
 import './Tariffs.css';
@@ -148,16 +150,31 @@ const Tariffs: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent className='content'>
-        <IonHeader className='header'>
-          <IonToolbar className='toolbar'>
-            <IonButtons slot="start" className='menuButton'>
-              <IonMenuButton />
+      {/* <IonHeader translucent={true}>
+        <IonToolbar className='BalanceToolbar'>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/internet" />
+          </IonButtons>
+          <IonTitle>Актуальные тарифы </IonTitle>
+        </IonToolbar>
+      </IonHeader> */}
+      <IonContent fullscreen={true} className='content'>
+        {/* <IonHeader collapse="condense" >
+          <IonToolbar className='BalanceToolbar'>
+            <IonButtons slot="start">
+              <IonBackButton defaultHref="/internet" />
             </IonButtons>
-            <IonLabel className='myIp'>Тарифы</IonLabel>
-            <IonImg className='logoApp' slot="end" src={logoApp} alt="logo"></IonImg>
+            <IonTitle>Актуальные тарифы </IonTitle>
           </IonToolbar>
-        </IonHeader>
+        </IonHeader> */}
+        <IonHeader>
+                <IonToolbar className='BalanceToolbar'>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref="/internet" />
+                    </IonButtons>
+                    <IonTitle>Актуальные тарифы</IonTitle>
+                </IonToolbar>
+            </IonHeader>
         {serviceInfoElements}
         {serviceInfoErrorApi}
         <IonLoading isOpen={isLoading} message="Loading..." spinner="circles" />
@@ -176,7 +193,7 @@ const Tariffs: React.FC = () => {
           </IonButton>
         </div>
       </IonModal>
-      <IonTabBar slot="bottom" className='tabBar'>
+      {/* <IonTabBar slot="bottom" className='tabBar'>
         <IonTabButton tab="Tarifs" href="/tariffs">
           <IonIcon icon={globeOutline} />
           <IonLabel>Тарифы</IonLabel>
@@ -189,15 +206,11 @@ const Tariffs: React.FC = () => {
           <IonIcon icon={home} />
           <IonLabel>Главная</IonLabel>
         </IonTabButton>
-        {/* <IonTabButton tab="library" href="/card">
-          <IonIcon icon={mapSharp} />
-          <IonLabel>Карта</IonLabel>
-        </IonTabButton> */}
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
           <IonLabel>Мой Профил</IonLabel>
         </IonTabButton>
-      </IonTabBar>
+      </IonTabBar> */}
     </IonPage>
   );
 };

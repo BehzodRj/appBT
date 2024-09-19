@@ -108,14 +108,18 @@ ion-card {
     color: #fff;
     margin: 0 10px 3px;
     border-radius: 10px;
+    margin-top: 10px;
 }
 
 .AddBalanceHome ion-button {
     font-size: 11px;
-    --background: #ffffff;
+    /* --background: #ffffff;
     color: #216ac9;
-    font-weight: 900;
-  
+    font-weight: 900; */
+    --background: #e8e820;
+    color: black;
+    font-weight: 500;
+    --border-radius: 10px;
 }
 .AddBalanceHome .item {
     border-radius: 10px;
@@ -236,7 +240,7 @@ ion-img.logoApp.md {
 .flexNews {
     display: flex;
     /* justify-content: space-between; */
-    padding-top: 10px;
+    padding-top: 0px;
     justify-content: center;
     flex-direction: row;
     overflow-x: auto;
@@ -267,7 +271,7 @@ ion-img.logoApp.md {
 
 .flexNews .card2 {
     background: #216ac9;
-    background-image:url(../../assets/img/optom.jpg);
+    background-image:url(../../assets/img/iptvFon.png);
     background-repeat:no-repeat;
     background-size: cover;
     width: 155px;
@@ -287,7 +291,8 @@ ion-img.logoApp.md {
 }
 
 .flexServices .first {
-    margin-left: 380px;
+    /* margin-left: 380px; */
+    margin-left: 0px;
 }
 
 .flexServices ion-card {
@@ -378,3 +383,27 @@ ion-img.logoApp.md {
     font-size: 14px;
 }
 
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact a {
+    text-decoration: none;
+}
+.contact ion-card {
+    background: #216ac9;
+    color: #fff;
+    border-radius: 15px;
+    min-width: 115px;
+    /* margin: 3px; */
+    margin-right: -2px;
+}
+.contact ion-card ion-card-content {
+    font-size: 16px;
+}
+
+.contact ion-card ion-card-title {
+    font-size: 18px;
+}
