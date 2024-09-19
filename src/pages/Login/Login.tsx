@@ -79,8 +79,6 @@ const LoginForm: React.FC = () => {
     }
     setIsLoading(true);
     doPost();
-
-
   };
   useEffect(() => {
     // Проверка наличия токена
