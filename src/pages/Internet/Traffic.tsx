@@ -76,7 +76,7 @@ const Traffic: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/with_traffic" />
                     </IonButtons>
-                    <IonTitle>{tariffName}</IonTitle>
+                    <IonTitle className='title'>{tariffName}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

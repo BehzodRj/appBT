@@ -27,7 +27,7 @@ const TariffsDushanbe: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/internet" />
                     </IonButtons>
-                    <IonTitle>Тарифы для города Душанбе</IonTitle>
+                    <IonTitle  className='title'>Тарифы для города Душанбе</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

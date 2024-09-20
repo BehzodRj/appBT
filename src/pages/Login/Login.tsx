@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet } from '@ionic/react';
+import { IonMenu,IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet } from '@ionic/react';
 import './login.css';
+import { menuController} from '@ionic/core'
 import logo from '../../assets/img/whiteLogo.png';
 import { CapacitorHttp } from '@capacitor/core';
 
@@ -9,7 +10,7 @@ const LoginForm: React.FC = () => {
   const [username, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory(); // Получаем объект history для управления роутингом
-
+  
   
   console.log('Email:');
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -78,6 +79,8 @@ const LoginForm: React.FC = () => {
     doPost();
   };
   useEffect(() => {
+     setTimeout(()=>{menuController.enable(false)},100)
+
     // Проверка наличия токена
     const token = localStorage.getItem('token');
 

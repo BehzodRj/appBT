@@ -88,7 +88,7 @@ const AddBalance: React.FC = () => {
                     <h1>С помощью MyBabilon</h1>
                   </div>
                   <div className="choosen__block">
-                    <h1>500 TJS</h1>
+                    {/* <h1>500 TJS</h1> */}
                     <IonRadio slot="end" class="radio" value="0"></IonRadio>
                   </div>
                 </div>

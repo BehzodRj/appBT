@@ -27,7 +27,7 @@ const TariffsWithTraffic: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle>Тарифы с учётом трафика</IonTitle>
+                    <IonTitle  className='title'>Тарифы с учётом трафика</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

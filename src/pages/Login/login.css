@@ -22,6 +22,7 @@
     height: 100vh;
     margin: 0px;
     border-radius: 0px;
+    margin-left: -2px;
   }
   
   .centered-content {

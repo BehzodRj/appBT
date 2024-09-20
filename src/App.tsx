@@ -47,6 +47,7 @@ import Dushanbe from './pages/Internet/Dushanbe';
 import TariffsDushanbe from './pages/Internet/TariffsDushanbe';
 import TariffsWithTraffic from './pages/Internet/TariffsWithTraffic';
 import Traffic from './pages/Internet/Traffic';
+import AutoPay from './pages/AutoPay/AutoPay';
 
 setupIonicReact();
 
@@ -84,6 +85,7 @@ const App: React.FC = () => {
             <Route path="/dushanbe" component={()=><Dushanbe/>} />
             <Route path="/with_traffic" component={()=><TariffsWithTraffic/>} />
             <Route path="/traffic" component={()=><Traffic/>} />
+            <Route path="/autopay" component={()=><AutoPay/>} />
             {/* <Route path="/news" component={NewsOne} /> */}
 
             {/* <Route path="/folder/:name" exact={true}>

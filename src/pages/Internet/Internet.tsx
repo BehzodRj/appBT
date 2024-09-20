@@ -34,7 +34,7 @@ const Internet: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle>Интернет тарифы </IonTitle>
+                    <IonTitle  className='title'>Интернет тарифы </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

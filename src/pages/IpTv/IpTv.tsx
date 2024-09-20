@@ -20,7 +20,7 @@ const IpTv: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle>IPTV </IonTitle>
+                    <IonTitle  className='title'>IPTV </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

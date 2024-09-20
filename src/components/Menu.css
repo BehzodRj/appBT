@@ -9,7 +9,8 @@ ion-menu.md ion-content {
   --padding-bottom: 20px;
   --background:#fff;
 }
-ion-menu.md ion-content ion-list {
+ion-menu.md ion-content ion-list.ios {
+  margin-top: 45px;
  
 }
 ion-menu ion-content::part(background) {
@@ -79,6 +80,7 @@ ion-menu.ios ion-content {
 
 ion-menu.ios ion-list {
   padding: 20px 0 0 0;
+  margin-top: 45px;
 }
 
 ion-menu.ios ion-note {
@@ -130,4 +132,7 @@ ion-menu .full-width {
   width: 100%;
   height: 45px;
   --background-color:transparent;
+}
+ion-menu .full-width.ios {
+  margin-top: 190%;
 }

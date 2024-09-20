@@ -10,6 +10,8 @@ import './Main.css';
 import optom from '../../assets/img/optom1.jpg';
 import NewsOne from '../News/NewsOne';
 import AddBalance from '../AddBalance/AddBalance';
+import Menu from '../../components/Menu';
+import authService from '../../components/authService';
 
 const Main: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -34,6 +36,9 @@ const Main: React.FC = () => {
 
   const goToAddBalance = () => {
     history.push('/add-balance');
+  };
+  const goToAutoPay = () => {
+    history.push('/autopay');
   };
   const goToTv = () => {
     history.push('/tv');
@@ -126,6 +131,7 @@ const Main: React.FC = () => {
         } catch (error) {
           console.error('Errors:', error);
           setIsLoading(false);
+          await authService.logout();
 
         }
       };
@@ -291,7 +297,7 @@ const Main: React.FC = () => {
 
 
 
-            <IonButton className='autoPay' onClick={goToAddBalance} >Включить автоплатеж</IonButton>
+            <IonButton className='autoPay' onClick={goToAutoPay} >Автоплатеж</IonButton>
 
 
           </div>
