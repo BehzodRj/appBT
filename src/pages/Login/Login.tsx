@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IonMenu,IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet } from '@ionic/react';
+import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonCard, IonImg, IonLoading } from '@ionic/react';
 import './login.css';
 import { menuController} from '@ionic/core'
 import logo from '../../assets/img/whiteLogo.png';
