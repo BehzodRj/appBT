@@ -28,7 +28,7 @@ const TariffsLte: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle>LTE</IonTitle>
+                    <IonTitle  className='title'>LTE</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

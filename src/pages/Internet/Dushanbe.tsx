@@ -62,7 +62,7 @@ const Dushanbe: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/dushanbe" />
                     </IonButtons>
-                    <IonTitle>{tariffName}</IonTitle>
+                    <IonTitle  className='title'>{tariffName}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

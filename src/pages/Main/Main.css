@@ -10,6 +10,7 @@
 ion-content::part(background) {
     /* background: #009fe3; */
     background: #ffffff;
+    background: #ffffff;
   }
  .optomImg {
     padding: 2% !important;
@@ -94,6 +95,8 @@ ion-content::part(background) {
     margin-right: 10px;
     align-items: center;
     border-radius: 15px;
+    margin-bottom: 8px;
+    margin-top: 8px;
     /* margin: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; */
@@ -112,14 +115,14 @@ ion-card {
 }
 
 .AddBalanceHome ion-button {
-    font-size: 11px;
-    /* --background: #ffffff;
-    color: #216ac9;
-    font-weight: 900; */
-    --background: #e8e820;
-    color: black;
-    font-weight: 500;
+    font-size: 12px;
+    /* --background: #e8e820;
+    color: black; */
+    --background: #39a705;
+    color: #ffffff;
+    font-weight: 900;
     --border-radius: 10px;
+    min-height: 45px;
 }
 .AddBalanceHome .item {
     border-radius: 10px;

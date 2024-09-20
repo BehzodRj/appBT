@@ -98,7 +98,7 @@ const LteEvo: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/tariffs" />
                     </IonButtons>
-                    <IonTitle>{tariffName}</IonTitle>
+                    <IonTitle  className='title'>{tariffName}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>

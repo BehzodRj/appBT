@@ -176,7 +176,7 @@ const Package: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/internet" />
                     </IonButtons>
-                    <IonTitle>Актуальные пакеты</IonTitle>
+                    <IonTitle className='title'>Актуальные пакеты</IonTitle>
                 </IonToolbar>
             </IonHeader>
         {serviceInfoElements}

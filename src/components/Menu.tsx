@@ -58,6 +58,10 @@ const Menu: React.FC = () => {
     }
   };
 
+  if (location.pathname === '/login'|| location.pathname === '/') {
+    return null;
+  }
+
   return (
     <IonMenu contentId="main" type="overlay">
         <IonContent>

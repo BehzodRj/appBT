@@ -172,7 +172,7 @@ const Tariffs: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/internet" />
                     </IonButtons>
-                    <IonTitle>Актуальные тарифы</IonTitle>
+                    <IonTitle className='title'>Актуальные тарифы</IonTitle>
                 </IonToolbar>
             </IonHeader>
         {serviceInfoElements}
