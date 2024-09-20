@@ -12,32 +12,23 @@ import {
   IonToolbar,
   IonFooter,
   IonList,
-  IonTab,
   IonCard,
   IonImg,
-  useIonLoading,
-  IonLoading,
-  IonSplitPane,
-  IonRouterOutlet,
   IonButtons,
-  IonMenuButton,
   IonBackButton,
-  IonCardTitle,
   IonCardHeader,
   IonRadioGroup,
   IonRadio,
-  IonIcon,
+  IonSelect,
 } from "@ionic/react";
 import "./AddBalance.css";
-import logoApp from "../../assets/img/whiteLogo.png";
-import axios from "axios";
-import logo from "../../assets/img/whiteLogo.png";
-import { Http, HttpOptions } from "@capacitor-community/http";
-import { CapacitorHttp, HttpResponse } from "@capacitor/core";
-import Menu from "../../components/Menu";
 import wallet from "../../assets/addBalance/wallet_blue.svg";
+import { IonSelectOption } from "@ionic/react";
 
 const AddBalance: React.FC = () => {
+  const [personalAccount, setPersonalAccount] = useState('');
+  const [amount, setAmount] = useState('');
+  
   return (
     <IonPage>
       <IonHeader>
@@ -55,11 +46,10 @@ const AddBalance: React.FC = () => {
             <IonItem className="item">
               <div className="item_native">
                 <IonLabel className="label">Лицевой счет</IonLabel>
-                <IonInput
-                  aria-label=""
-                  className="input"
-                  type="number"
-                ></IonInput>
+                <IonSelect className="input" onIonChange={(e) => { setPersonalAccount(e.detail.value!) }}>
+                  <IonSelectOption>12345</IonSelectOption>
+                  <IonSelectOption>123245</IonSelectOption>
+                </IonSelect>
               </div>
             </IonItem>
 
@@ -71,8 +61,11 @@ const AddBalance: React.FC = () => {
                   className="input"
                   type="number"
                   placeholder="00.0 TJS"
+                  value={amount}
+                  onIonChange={(e) => { setAmount(e.detail.value!) }}
                 ></IonInput>
               </div>
+              {amount.length > 0  && <span className="ps__span--tjs" slot="end">TJS</span>}
             </IonItem>
           </IonList>
         </IonCard>
@@ -95,7 +88,7 @@ const AddBalance: React.FC = () => {
               </IonItem>
             </IonRadioGroup>
           </IonList>
-          
+
           <IonButton className="add_balance">Оплатить</IonButton>
         </IonCard>
       </IonContent>

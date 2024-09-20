@@ -47,8 +47,17 @@
 }
 
 .card-info .list .item .item_native .input {
-    --padding-start: 0;
+    max-width: 100%;
     margin: 0;
+    --padding-start: 0;
+    color: #FFF;
+}
+
+.card-info .list .item .ps__span--tjs {
+    height: 56%;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
     color: #FFF;
 }
 
@@ -121,6 +130,7 @@
     background: url("../../assets/addBalance/selected.svg") no-repeat center center !important;
     background-size: 21.60px !important;
 }
+
 .card-wallet .add_balance {
     width: 100%;
     height: 5rem;
