@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   IonContent,
   IonInput,
@@ -24,11 +24,48 @@ import {
 import "./AddBalance.css";
 import wallet from "../../assets/addBalance/wallet_blue.svg";
 import { IonSelectOption } from "@ionic/react";
+import { CapacitorHttp } from "@capacitor/core";
 
 const AddBalance: React.FC = () => {
-  const [personalAccount, setPersonalAccount] = useState('');
-  const [amount, setAmount] = useState('');
-  
+  // Получаем переданные данные о тарифе
+  const location = useLocation<{ selectedValue: string }>();
+  const personalAccountDefault = location.state?.selectedValue;
+  const [personalAccountData, setPersonalAccountData] = useState([]);
+  const [personalAccountCurrent, setPersonalAccountCurrent] = useState("");
+  const [amount, setAmount] = useState("");
+
+  useEffect(() => {
+    doGet();
+  }, []);
+
+  function doGet() {
+    const storedToken = localStorage.getItem("token");
+    const storedUserId = localStorage.getItem("user_id");
+
+    const options = {
+      url: `https://api.btt.tj/api/getUserInfo/${storedUserId}`,
+      headers: {
+        Authorization: `Bearer ${storedToken}`,
+        "Content-Type": "application/json",
+      },
+    };
+
+    CapacitorHttp.get(options)
+      .then((response) => {
+        console.log("Response", response);
+        let personalAccountArray = [];
+        Object.entries(response.data.accounts_info).map(([key, value]) => {
+          personalAccountArray.push(key);
+        });
+
+        setPersonalAccountData(personalAccountArray);
+        setPersonalAccountCurrent(personalAccountDefault);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -46,9 +83,16 @@ const AddBalance: React.FC = () => {
             <IonItem className="item">
               <div className="item_native">
                 <IonLabel className="label">Лицевой счет</IonLabel>
-                <IonSelect className="input" onIonChange={(e) => { setPersonalAccount(e.detail.value!) }}>
-                  <IonSelectOption>12345</IonSelectOption>
-                  <IonSelectOption>123245</IonSelectOption>
+                <IonSelect
+                  className="input"
+                  value={personalAccountCurrent}
+                  onIonChange={(e) => {
+                    setPersonalAccountCurrent(e.detail.value!);
+                  }}
+                >
+                  {personalAccountData.map((personalAccountMap, index) => (
+                    <IonSelectOption key={index}>{ personalAccountMap }</IonSelectOption>
+                  ))}
                 </IonSelect>
               </div>
             </IonItem>
@@ -62,10 +106,17 @@ const AddBalance: React.FC = () => {
                   type="number"
                   placeholder="00.0 TJS"
                   value={amount}
-                  onIonChange={(e) => { setAmount(e.detail.value!) }}
+                  onIonInput={(e) => {
+                    setAmount(e.detail.value!);
+                  }}
                 ></IonInput>
               </div>
-              {amount.length > 0  && <span className="ps__span--tjs" slot="end">TJS</span>}
+
+              {amount.length > 0 && (
+                <span className="ps__span--tjs" slot="end">
+                  TJS
+                </span>
+              )}
             </IonItem>
           </IonList>
         </IonCard>
@@ -89,7 +140,7 @@ const AddBalance: React.FC = () => {
             </IonRadioGroup>
           </IonList>
 
-          <IonButton className="add_balance">Оплатить</IonButton>
+          <IonButton className="add_balance" disabled={ amount.length < 1 }>Оплатить</IonButton>
         </IonCard>
       </IonContent>
     </IonPage>
