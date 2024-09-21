@@ -7,7 +7,7 @@ ion-menu.md ion-content {
   --padding-end: 8px;
   --padding-top: 20px;
   --padding-bottom: 20px;
-  --background:#fff;
+  --background:#ffffff !important;
 }
 ion-menu.md ion-content ion-list.ios {
   margin-top: 45px;
@@ -54,7 +54,8 @@ ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
   border-radius: 4px;
-  --background:#fff;
+  --background:#ffffff !important;
+  --background-color:#ffffff !important;
   color:#000;
 }
 
@@ -135,4 +136,9 @@ ion-menu .full-width {
 }
 ion-menu .full-width.ios {
   margin-top: 190%;
+}
+
+
+.errorTariffs {
+  color: black;
 }

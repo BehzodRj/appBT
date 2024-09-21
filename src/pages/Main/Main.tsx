@@ -222,7 +222,6 @@ const Main: React.FC = () => {
         </IonItem> */}
 
         <div className='flexNews'>
-          <IonRouterLink routerLink="/news" style={{ textDecoration: 'none' }}>
             <IonCard color="primary" className='card1'>
               <IonCardHeader>
                 <IonCardTitle></IonCardTitle>
@@ -231,8 +230,6 @@ const Main: React.FC = () => {
 
               <IonCardContent></IonCardContent>
             </IonCard>
-
-          </IonRouterLink>
 
           <IonCard color="secondary" className='card2'>
             <IonCardHeader>
