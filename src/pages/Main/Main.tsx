@@ -35,7 +35,10 @@ const Main: React.FC = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   const goToAddBalance = () => {
-    history.push('/add-balance');
+    history.push({
+      pathname: '/add-balance',
+      state: { selectedValue }  // Передаем имя тарифа через state
+  });
   };
   const goToAutoPay = () => {
     history.push('/autopay');
