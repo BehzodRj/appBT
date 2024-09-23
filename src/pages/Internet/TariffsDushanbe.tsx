@@ -1,73 +1,73 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet, IonButtons, IonMenuButton, IonBackButton, IonIcon } from '@ionic/react';
-import logoApp from '../../assets/img/whiteLogo.png';
-import axios from 'axios';
-import logo from '../../assets/img/whiteLogo.png';
-import { Http, HttpOptions } from '@capacitor-community/http';
-import { CapacitorHttp, HttpResponse } from '@capacitor/core';
-import Menu from '../../components/Menu';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonIcon, IonLoading } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
+import axios from 'axios';  // импортируем axios
 
 const TariffsDushanbe: React.FC = () => {
     const history = useHistory();
     
-      const goToTarifsDushanbe = (tariffName: string) => {
+    // Состояния для хранения списка тарифов, состояния загрузки и ошибок
+    const [tariffs, setTariffs] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    // Получаем список тарифов через API при загрузке компонента
+    useEffect(() => {
+        const fetchTariffs = async () => {
+            try {
+                const response = await axios.get('https://wifi.babilon-t.tj/pages/tarifsDushanbe.php?dushanbe');  // Замените на ваш реальный URL API
+                setTariffs(response.data);  // Сохраняем данные в состоянии
+                setLoading(false);
+            } catch (err) {
+                setError('Ошибка при загрузке тарифов');
+                setLoading(false);
+            }
+        };
+
+        fetchTariffs();
+    }, []);
+
+    // Функция для перехода на страницу с информацией о тарифе
+    const goToTarifsDushanbe = (tariffName: string) => {
         history.push({
             pathname: '/dushanbe',
             state: { tariffName }  // Передаем имя тарифа через state
         });
     };
+
+    // Показать спиннер, пока данные загружаются
+    if (loading) {
+        return <IonLoading isOpen={loading} message={'Загрузка...'} />;
+    }
+
+    // Если возникла ошибка, вывести сообщение
+    if (error) {
+        return <IonContent>{error}</IonContent>;
+    }
+
     return (
-
         <IonPage>
-
             <IonHeader>
                 <IonToolbar className='BalanceToolbar'>
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/internet" />
                     </IonButtons>
-                    <IonTitle  className='title'>Тарифы для города Душанбе</IonTitle>
+                    <IonTitle className='title'>Тарифы для города Душанбе</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
                 <IonList class='ListInternet'>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber</IonLabel>
-                    </IonItem>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber S')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber S</IonLabel>
-                    </IonItem>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber M')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber M</IonLabel>
-                    </IonItem>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber L')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber L</IonLabel>
-                    </IonItem>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber XL')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber XL</IonLabel>
-                    </IonItem>
-                    <IonItem onClick={() => goToTarifsDushanbe('Cyber XXL')}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel> Cyber XXL</IonLabel>
-                    </IonItem>
+                    {/* Выводим динамически загруженные тарифы */}
+                    {tariffs.map(tariff => (
+                        <IonItem key={tariff} onClick={() => goToTarifsDushanbe(tariff)}>
+                            <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
+                            <IonLabel>{tariff}</IonLabel>
+                        </IonItem>
+                    ))}
                 </IonList>
             </IonContent>
-
         </IonPage>
-
-
     );
 };
 

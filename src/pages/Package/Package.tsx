@@ -65,7 +65,7 @@ const Package: React.FC = () => {
           console.log("ggd", data);
           if (data.result == 'failed') {
             const errorApi = (
-              <IonLabel>Нет доступных пакетов</IonLabel>
+              <IonLabel className='errorTariffs'>Нет доступных пакетов</IonLabel>
             );
             setServiceInfoErrorApi(errorApi);
           }

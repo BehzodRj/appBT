@@ -106,7 +106,7 @@ const Tariffs: React.FC = () => {
       }
     } else {
       const errorApi = (
-        <IonLabel>Нет доступных тарифов</IonLabel>
+        <IonLabel className='errorTariffs'>Нет доступных тарифов</IonLabel>
       );
       setServiceInfoErrorApi(errorApi);
     }
