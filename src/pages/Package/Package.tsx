@@ -212,7 +212,7 @@ const Package: React.FC = () => {
         </IonTabButton>
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
-          <IonLabel>Мой Профил</IonLabel>
+          <IonLabel>Мой Профиль</IonLabel>
         </IonTabButton>
       </IonTabBar> */}
     </IonPage>

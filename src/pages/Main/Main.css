@@ -21,6 +21,7 @@ ion-content::part(background) {
 .logoApp.ios {
     width: 100px;
     padding-right: 15px;
+    padding-bottom: 15px;
 }
 .footerButton {
     display: grid;
@@ -115,6 +116,9 @@ ion-card {
     margin-top: 10px;
 }
 
+.AddBalanceHome ion-button.ios {
+    font-size: 14px;
+}
 .AddBalanceHome ion-button {
     font-size: 12px;
     /* --background: #e8e820;
@@ -275,7 +279,7 @@ ion-img.logoApp.md {
 .flexNews .card1.ios {
     margin-bottom: 10px;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 93px;
 }
 .flexNews .card2.ios {
     margin-left: 8px;
@@ -400,7 +404,11 @@ ion-img.logoApp.md {
 
 .contact {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .contact a {
@@ -410,12 +418,18 @@ ion-img.logoApp.md {
     background: #216ac9;
     color: #fff;
     border-radius: 15px;
-    min-width: 115px;
+    min-width: 140px;
     /* margin: 3px; */
-    margin-right: -2px;
+    /* margin-right: -2px; */
 }
 .contact ion-card.ios {
-    margin-right: -10px;
+    margin-right: -12px;
+}
+.contact ion-card.md {
+    margin-right: -5px;
+}
+.contact ion-card.md {
+    min-width: 125px;
 }
 .contact ion-card ion-card-content {
     font-size: 16px;

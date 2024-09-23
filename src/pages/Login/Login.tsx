@@ -91,7 +91,7 @@ const LoginForm: React.FC = () => {
   }, [history]);
   return (
 
-    <IonContent>
+    <IonContent scrollY>
 
       {/* <IonHeader>
         <IonToolbar className='headerLogin'>

@@ -214,7 +214,7 @@ const Profile: React.FC = () => {
             {/* <IonLabel className='namePage'>Мой Профил</IonLabel> */}
             {/* <IonLabel className='myBalance'>Баланс</IonLabel> */}
             {/* <IonLabel className='myIp' slot="end">ip: 10.154.154.154</IonLabel> */}
-            <IonLabel className='myIp'>Мой Профил </IonLabel>
+            <IonLabel className='myIp'>Мой Профиль </IonLabel>
             <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg>
           </IonToolbar>
 
@@ -367,7 +367,7 @@ const Profile: React.FC = () => {
 
         <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
-          <IonLabel>Мой Профил</IonLabel>
+          <IonLabel>Мой Профиль</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonPage>

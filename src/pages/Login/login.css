@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0px;
     border-radius: 0px;
     margin-left: -2px;
@@ -31,19 +31,23 @@
 
   .imgLogo {
     width: 80%;
+    padding-top: 40%;
+    padding-bottom: 78%;
    
   }
 
   .imgLogo .img {
    position: relative;
    top: -54%;
+   padding-bottom: 31%;
   }
   .imgLogo .loginText {
     position: relative;
     top: -10%;
-    font-size: 22px;
+    font-size: 25px;
     /* color: aliceblue; */
     color: #ffffff !important;
+    font-weight: 300;
    }
 
    .content .login.ios {
@@ -60,6 +64,7 @@
     margin-bottom: 10px;
     --background: #ffffff !important;
     color: black;
+    margin-top: 32px;
   }
   .content .password {
     border-radius: 20px;

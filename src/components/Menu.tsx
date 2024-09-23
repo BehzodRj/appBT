@@ -33,7 +33,7 @@ const appPages: AppPage[] = [
     mdIcon: homeOutline
   },
   {
-    title: 'Мой Профил',
+    title: 'Мой Профиль',
     url: '/profile',
     iosIcon: personCircleOutline,
     mdIcon: personCircleOutline
