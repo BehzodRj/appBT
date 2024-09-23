@@ -66,6 +66,10 @@ const AddBalance: React.FC = () => {
       });
   }
 
+  function payToMyBabilon() {
+    window.open(`https://my1.babilon-m.tj/smartpay?id=596&amount=${amount}&account=${personalAccountCurrent}`)
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -140,7 +144,7 @@ const AddBalance: React.FC = () => {
             </IonRadioGroup>
           </IonList>
 
-          <IonButton className="add_balance" disabled={ amount.length < 1 }>Оплатить</IonButton>
+          <IonButton className="add_balance" disabled={ amount.length < 1 } onClick={payToMyBabilon} >Оплатить</IonButton>
         </IonCard>
       </IonContent>
     </IonPage>
