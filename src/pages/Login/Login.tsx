@@ -105,13 +105,13 @@ const LoginForm: React.FC = () => {
           <IonLabel className='loginText'>Вход в личный кабинет</IonLabel>
           <IonItem className='login' lines='none'>
             {/* <IonLabel position="floating">Email</IonLabel> */}
-            <IonInput aria-label="Email" placeholder='Логин' type="email" value={username} onIonChange={(e) => setEmail(e.detail.value!)}></IonInput>
+            <IonInput aria-label="Email" placeholder='Логин' type="email" value={username} onIonInput={(e) => setEmail(e.detail.value!)}></IonInput>
           </IonItem>
 
           <IonItem className='password' lines='none'>
             {/* <IonLabel position="floating">Password</IonLabel> */}
             {/* <IonInput type="password" value={password} onIonChange={(e) => setPassword(e.detail.value!)}></IonInput> */}
-            <IonInput aria-label="password" type="password" placeholder='Парол' value={password} onIonChange={(e) => { const newPassword = e.detail.value || ''; setPassword(newPassword); }}></IonInput>
+            <IonInput aria-label="password" type="password" placeholder='Парол' value={password} onIonInput={(e) => { const newPassword = e.detail.value || ''; setPassword(newPassword); }}></IonInput>
           </IonItem>
           <div className='buttonLogin'>
 
