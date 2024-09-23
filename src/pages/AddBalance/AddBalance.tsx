@@ -67,7 +67,7 @@ const AddBalance: React.FC = () => {
   }
 
   function payToMyBabilon() {
-    window.open(`https://my1.babilon-m.tj/smartpay?id=596&amount=${amount}&account=${personalAccountCurrent}`);
+    window.open(`https://my1.babilon-m.tj/PayService/13?amount=${amount}&account=${personalAccountCurrent}`)
   }
 
   return (
