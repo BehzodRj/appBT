@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { IonAccordionGroup, IonAvatar, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonLoading, IonMenuButton, IonPage, IonRow, IonSelect, IonSelectOption, IonTabBar, IonTabButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { useHistory, useParams } from 'react-router';
 import './Profile.css';
-import { globeOutline, home, locationOutline, mapSharp, personCircleOutline, personOutline, phonePortraitOutline, wallet, wineOutline } from 'ionicons/icons';
+import { globeOutline, headsetOutline, home, locationOutline, mapSharp, personCircleOutline, personOutline, phonePortraitOutline, wallet, wineOutline } from 'ionicons/icons';
 import TabsBar from '../tabBar';
 import { CapacitorHttp } from '@capacitor/core';
 import logoApp from '../../assets/img/whiteLogo.png';
 import avatarProfile from '../../assets/img/profileLogo.png';
+import sotset from '../../assets/img/sotset.svg';
+
 
 const Profile: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -123,6 +125,30 @@ const Profile: React.FC = () => {
 
   }, [option]);
 
+  const formatName = (fullName) => {
+  // Разделяем строку по пробелам
+  const nameParts = fullName.split(' ');
+  
+  if (nameParts.length >= 3) {
+    const lastName = nameParts[0]; // Фамилия
+    const firstInitial = nameParts[1][0]; // Первая буква имени
+    const middleInitial = nameParts[2][0]; // Первая буква отчества
+    
+    // Возвращаем формат: Фамилия И.Б.
+    return `${lastName} ${firstInitial}.${middleInitial}.`;
+  } else if (nameParts.length === 2) {
+    // Если отчество отсутствует
+    const lastName = nameParts[0]; // Фамилия
+    const firstInitial = nameParts[1][0]; // Первая буква имени
+    
+    // Возвращаем формат: Фамилия И.
+    return `${lastName} ${firstInitial}.`;
+  } else {
+    // Если имя состоит только из одного слова (например, только фамилия)
+    return fullName;
+  }
+};
+
   useEffect(() => {
 
     console.log("selected", selectedValue);
@@ -214,20 +240,36 @@ const Profile: React.FC = () => {
             {/* <IonLabel className='namePage'>Мой Профил</IonLabel> */}
             {/* <IonLabel className='myBalance'>Баланс</IonLabel> */}
             {/* <IonLabel className='myIp' slot="end">ip: 10.154.154.154</IonLabel> */}
-            <IonLabel className='myIp'>Мой Профиль </IonLabel>
+            <IonLabel className='myIp'>Профиль </IonLabel>
             <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg>
           </IonToolbar>
 
-        </IonHeader> 
+        </IonHeader>
         <div className="avatar">
-              {/* <IonAvatar aria-hidden="true" > */}
-                <img alt="avatar" src={avatarProfile} />
-              {/* </IonAvatar> */}
+          <IonAvatar aria-hidden="true" >
+            <img alt="avatar" src={avatarProfile} />
+          </IonAvatar>
+          <IonLabel className='name'>{formatName(full_name)}</IonLabel>
+          <IonText className='phone'>{phone}</IonText>
+          <div className='selectLs' >
+                <IonLabel>
+                  ЛС:
+                </IonLabel>
+                <IonLabel className='mySelect'>
+                  <IonSelect class="custom-select" aria-label="Favorite Fruit" value={selectedValue} onIonChange={(e) => setSelectedValue(e.detail.value)}>
+                  {/* <IonSelectOption value="apple">71074</IonSelectOption>
+                <IonSelectOption value="banana">83502</IonSelectOption>
+                <IonSelectOption value="orange">97850</IonSelectOption> */}
+                  {option}
+                </IonSelect>
+                </IonLabel>
+                
             </div>
+        </div>
         <IonCard className='group'>
 
           <IonCardContent className='flex'>
-           
+
             <IonList className='listItem' >
               <IonItem className='item'>
                 <IonIcon icon={personOutline} />
@@ -241,11 +283,11 @@ const Profile: React.FC = () => {
                 <IonIcon icon={phonePortraitOutline} />
                 <IonLabel>{phone}</IonLabel>
               </IonItem>
-                {/* <IonItem className='item'>
+              {/* <IonItem className='item'>
                   <IonIcon icon={personCircleOutline} />
                   <IonLabel>sluj_97850</IonLabel>
                 </IonItem> */}
-                {/* <IonItem className='item' lines="none">
+              {/* <IonItem className='item' lines="none">
                     <IonLabel className='name'>Холмуродов Икбол</IonLabel>
                     </IonItem>
                 <IonItem className='item' lines="none">
@@ -350,14 +392,12 @@ const Profile: React.FC = () => {
       </IonContent>
       {/* <TabsBar/> */}
       <IonTabBar slot="bottom" className='tabBar'>
-        {/* <IonTabButton tab="Tarifs" href="/tariffs">
-          <IonIcon icon={globeOutline} />
-          <IonLabel>Тарифы</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="SpeedTest" href="/package">
+
+
+        <IonTabButton tab="profile" href="/profile">
           <IonIcon icon={personCircleOutline} />
-          <IonLabel>Пакеты</IonLabel>
-        </IonTabButton> */}
+          <IonLabel>Профиль</IonLabel>
+        </IonTabButton>
 
         <IonTabButton tab="home" href="/main">
           <IonIcon icon={home} />
@@ -365,9 +405,9 @@ const Profile: React.FC = () => {
         </IonTabButton>
 
 
-        <IonTabButton tab="profile" href="/profile">
-          <IonIcon icon={personCircleOutline} />
-          <IonLabel>Мой Профиль</IonLabel>
+        <IonTabButton tab="sotset" href="/sotset">
+          <IonIcon icon={headsetOutline} />
+          <IonLabel>Поддержа</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonPage>

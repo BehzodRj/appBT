@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonPage, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonList, IonItem, IonListHeader, IonLabel } from '@ionic/react';
+import { IonContent, IonPage, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonList, IonItem, IonListHeader, IonLabel, IonCard } from '@ionic/react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
@@ -36,7 +36,8 @@ const LteEvo: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonList className='ListEvo'>
+                <IonCard>
+                   <IonList className='ListEvo'>
                     <IonListHeader> Тариф {tariffName}</IonListHeader>
                     <IonItem>
                         <IonLabel>Оплаченный трафик</IonLabel>
@@ -55,7 +56,9 @@ const LteEvo: React.FC = () => {
                         <IonLabel slot='end'>{selectedTariff.price}</IonLabel>
                     </IonItem>
                     <p>Для подключения позвоните в Call-Center <br/> <a href="tel:+992446006060">44 600-60-60</a></p>
-                </IonList>
+                </IonList> 
+                </IonCard>
+                
             </IonContent>
         </IonPage>
     );

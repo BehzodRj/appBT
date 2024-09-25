@@ -7,6 +7,25 @@
 .contentMain ion-content ion-card {
     background: transparent;
 }
+
+.swiper-wrapper {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.swiper-slide {
+    height: 140px !important;
+    margin-right: 10px !important;
+    /* border-radius: 10px; */
+  }
+  
+  .banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
 ion-content::part(background) {
     /* background: #009fe3; */
     background: #ffffff;
@@ -120,14 +139,19 @@ ion-card {
     font-size: 14px;
 }
 .AddBalanceHome ion-button {
-    font-size: 12px;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
     /* --background: #e8e820;
     color: black; */
-    --background: #39a705;
-    color: #ffffff;
-    font-weight: 900;
-    --border-radius: 10px;
-    min-height: 45px;
+    /* --background: #39a705; */
+    --background: #ffffff;
+    color: #39669F;
+    --border-radius: 8px;
+    min-height: 40px;
+    width: 164px;
+    height: 40px;
 }
 .AddBalanceHome .item {
     border-radius: 10px;
@@ -152,6 +176,7 @@ ion-card {
     width: 65% !important;
     font-size: 20px;
     font-weight: 500;
+    line-height: 18px;
     color: #ffffff !important;
 }
 
@@ -175,8 +200,12 @@ ion-card {
     --background:#216ac9 !important;
     width: 33%;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 20px;
     color: #ffffff !important;
+    text-align: start;
+    align-items: end;
+
 }
 
 .selectHomeInfo .icon-inner {
@@ -192,8 +221,9 @@ ion-card {
     border-left: 1px solid #ffffff;
 }
 .selectHomeInfo .item .text {
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 .selectHomeInfo .item .Info-container {
@@ -233,10 +263,24 @@ ion-img.logoApp.md {
     padding: 0;
 }
 .SomeText {
-    margin-bottom: -20px;
-    margin-top: -10px;
+    margin-bottom: -12px;
+    margin-top: -3px;
     --background: transparent;
-    color: #000000;
+    color: #333333;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25.78px;
+    letter-spacing: 0.37400001287460327px;
+    text-align: left;
+}
+.SomeText .all {
+    font-size: 15px !important;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.37400001287460327px;
+    text-align: right;
+    color: #2B2D33;
+
 }
 .SomeText ion-label {
     font-size: 20px !important;
@@ -314,24 +358,36 @@ ion-img.logoApp.md {
 }
 
 .flexServices ion-card {
-    background: #216ac9;
+    /* background: #216ac9; */
+    /* background: #ffffff; */
+    background: #edeeee;
     /* height: 130px; */
     color: #ffffff;
     border-radius: 20px;
-    min-width: 120px;
-    margin: 3px;
+    min-width: 110px;
+    margin: 5px;
+    width: 117px;
+    height: 114px;
 }
 
 .flexServices ion-card-title.ion-inherit-color {
-    font-size: 18px !important;
+    font-size: 20px !important;
+    font-weight: 500;
+    line-height: 23.44px;
+    color: #216AC9;
 }
 
 .flexServices ion-card-content {
     font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-align: left;
+    color: #000000;
+    width: 130px;
 }
 
 
-.flexServices .card1{
+/* .flexServices .card1{
     width: 105px !important;
 }
 .flexServices .card2{
@@ -339,7 +395,7 @@ ion-img.logoApp.md {
 }
 .flexServices .card3{
     width: 105px !important;
-}
+} */
 
 
 .flexServices1 {

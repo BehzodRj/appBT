@@ -30,8 +30,9 @@ const Lte: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonList class='ListInternet'>
-                    <IonItem onClick={goToTarrifsLte}>
+                <IonCard>
+                     <IonList class='ListInternet'>
+                    <IonItem onClick={goToTarrifsLte} lines='none'>
                         {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
                         <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
                         <IonLabel>Тарифы</IonLabel>
@@ -42,6 +43,8 @@ const Lte: React.FC = () => {
                     </IonItem> */}
                     
                 </IonList>
+                </IonCard>
+               
             </IonContent>
 
         </IonPage>

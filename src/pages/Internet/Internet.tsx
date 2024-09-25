@@ -14,16 +14,16 @@ const Internet: React.FC = () => {
     const history = useHistory();
     const goToTarrifs = () => {
         history.push('/tariffs');
-      };
+    };
     const goToPakets = () => {
         history.push('/package');
-      };
+    };
     const goToTarifsForDushanbe = () => {
         history.push('/tarifs_dushanbe');
-      };
+    };
     const goToTarifsWithTraffic = () => {
         history.push('/with_traffic');
-      };
+    };
 
     return (
 
@@ -34,35 +34,46 @@ const Internet: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle  className='title'>Интернет тарифы </IonTitle>
+                    <IonTitle className='title'>Интернет тарифы </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonList class='ListInternet'>
-                    <IonItem onClick={goToTarrifs}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel>Актуальные тарифы</IonLabel>
-                    </IonItem>
-                    <IonItem  onClick={goToPakets}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel>Актуальные пакеты</IonLabel>
-                    </IonItem>
-                    <IonItem  onClick={goToTarifsForDushanbe}>
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel>Для города Душанбе</IonLabel>
-                    </IonItem>
-                    {/* <IonItem>
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel>Для регионов</IonLabel>
-                    </IonItem> */}
-                    <IonItem  onClick={goToTarifsWithTraffic}>
-                        {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
-                        <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                        <IonLabel>С учётом трафика</IonLabel>
-                    </IonItem>
-                </IonList>
+
+                <IonCard>
+                    <IonList className='ListInternet'>
+                        <IonItem onClick={goToTarrifs} lines='none'>
+                            {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
+                            <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
+                            <IonLabel>Актуальные тарифы</IonLabel>
+                        </IonItem>
+                    </IonList>
+                </IonCard>
+                <IonCard>
+                    <IonList className='ListInternet'>
+                        <IonItem onClick={goToPakets} lines='none'>
+                            {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
+                            <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
+                            <IonLabel>Актуальные пакеты</IonLabel>
+                        </IonItem>
+                    </IonList>
+                </IonCard>
+                <IonCard>
+                    <IonList className='ListInternet'>
+                        <IonItem onClick={goToTarifsForDushanbe} lines='none'>
+                            <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
+                            <IonLabel>Для города Душанбе</IonLabel>
+                        </IonItem>
+                    </IonList>
+                </IonCard>
+                <IonCard>
+                    <IonList className='ListInternet'>
+                        <IonItem onClick={goToTarifsWithTraffic} lines='none'>
+                            {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
+                            <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
+                            <IonLabel>С учётом трафика</IonLabel>
+                        </IonItem>
+                    </IonList>
+                </IonCard>
             </IonContent>
 
         </IonPage>

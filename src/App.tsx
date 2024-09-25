@@ -48,6 +48,7 @@ import TariffsDushanbe from './pages/Internet/TariffsDushanbe';
 import TariffsWithTraffic from './pages/Internet/TariffsWithTraffic';
 import Traffic from './pages/Internet/Traffic';
 import AutoPay from './pages/AutoPay/AutoPay';
+import Sotset from './pages/Sotset/Sotset';
 
 setupIonicReact();
 
@@ -69,6 +70,7 @@ const App: React.FC = () => {
             <Route path="/main" component={()=><Main />} />
             <Route path="/tariffs" component={()=><Tariffs/>} />
             <Route path="/package" component={()=><Package/>} />
+            <Route path="/sotset" component={()=><Sotset/>} />
             <Route path="/login" component={()=><Login/>} />
             <Route path="/add-balance" component={()=><AddBalance/>} />
             <Route path="/tv" component={()=><IpTv/>} />
