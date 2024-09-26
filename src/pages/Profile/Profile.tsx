@@ -240,8 +240,8 @@ const Profile: React.FC = () => {
             {/* <IonLabel className='namePage'>Мой Профил</IonLabel> */}
             {/* <IonLabel className='myBalance'>Баланс</IonLabel> */}
             {/* <IonLabel className='myIp' slot="end">ip: 10.154.154.154</IonLabel> */}
-            <IonLabel className='myIp'>Профиль </IonLabel>
-            <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg>
+            <IonTitle className='title'>Профиль </IonTitle>
+            {/* <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg> */}
           </IonToolbar>
 
         </IonHeader>
@@ -266,7 +266,7 @@ const Profile: React.FC = () => {
                 
             </div>
         </div>
-        <IonCard className='group'>
+        {/* <IonCard className='group'>
 
           <IonCardContent className='flex'>
 
@@ -275,25 +275,12 @@ const Profile: React.FC = () => {
                 <IonIcon icon={personOutline} />
                 <IonLabel>{full_name}</IonLabel>
               </IonItem>
-              {/* <IonItem className='item'>
-                <IonIcon icon={locationOutline} />
-                <IonLabel>{address}</IonLabel>
-              </IonItem> */}
+             
               <IonItem className='item' >
                 <IonIcon icon={phonePortraitOutline} />
                 <IonLabel>{phone}</IonLabel>
               </IonItem>
-              {/* <IonItem className='item'>
-                  <IonIcon icon={personCircleOutline} />
-                  <IonLabel>sluj_97850</IonLabel>
-                </IonItem> */}
-              {/* <IonItem className='item' lines="none">
-                    <IonLabel className='name'>Холмуродов Икбол</IonLabel>
-                    </IonItem>
-                <IonItem className='item' lines="none">
-                      <IonIcon icon={wallet} />
-                      <IonLabel>1020 TJS</IonLabel>
-                    </IonItem> */}
+             
 
             </IonList>
             <IonList className='select' lines="none">
@@ -304,16 +291,14 @@ const Profile: React.FC = () => {
               </IonItem>
               <IonItem lines="none" slot='end'>
                 <IonSelect class="custom-select" aria-label="Favorite Fruit" value={selectedValue} onIonChange={(e) => setSelectedValue(e.detail.value)}>
-                  {/* <IonSelectOption value="apple">71074</IonSelectOption>
-                <IonSelectOption value="banana">83502</IonSelectOption>
-                <IonSelectOption value="orange">97850</IonSelectOption> */}
+                 
                   {option}
                 </IonSelect>
               </IonItem>
             </IonList>
 
           </IonCardContent>
-        </IonCard>
+        </IonCard> */}
         {/* <IonCard>
           <IonList className='select' lines="none">
             <IonItem className='textLS' lines="none">
@@ -329,6 +314,18 @@ const Profile: React.FC = () => {
             </IonItem>
           </IonList>
         </IonCard> */}
+        <IonItem className='package' lines="none">
+          <IonLabel>
+            Адрес
+          </IonLabel>
+        </IonItem>
+        <IonCard>
+          <div className='activePackage'>
+            <IonItem className='item' lines='none'>
+              <IonLabel>{address}</IonLabel>
+            </IonItem>
+          </div>
+        </IonCard>
         <IonCard>
           <IonList className='balanceCard'>
             <IonItem className='textBalance'>

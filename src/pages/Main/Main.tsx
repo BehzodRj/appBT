@@ -72,6 +72,9 @@ const Main: React.FC = () => {
   const goToHosting = () => {
     history.push('/hosting');
   };
+  const goToAllServices = () => {
+    history.push('/all_services');
+  };
 
 
   const toggleDetails = () => {
@@ -79,7 +82,12 @@ const Main: React.FC = () => {
   };
   console.log("Profileee");
 
-
+  const goToNews = (tariffName: string) => {
+    history.push({
+        pathname: '/news',
+        state: { tariffName }  // Передаем имя тарифа через state
+    });
+};
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -225,7 +233,8 @@ const Main: React.FC = () => {
               <IonMenuButton />
             </IonButtons>
             {/* <IonLabel className='myBalance'>Баланс</IonLabel> */}
-            <IonLabel className='myIp'>Личный кабинет </IonLabel>
+            {/* <IonLabel className='myIp'>Главная </IonLabel> */}
+            <IonTitle  className='title'>Главная</IonTitle>
             <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg>
             {/* <IonTitle className='myBalance'>Баланс <br />
             <IonLabel>12 TJS</IonLabel>
@@ -256,14 +265,14 @@ const Main: React.FC = () => {
           </SwiperSlide>
           <SwiperSlide>
 
-            <img src={fonIptv} alt="Banner 1" className='banner' />
+            <img src={fonIptv} alt="Banner 2" className='banner' />
+          </SwiperSlide>
+          {/* <SwiperSlide>
+            <img src={optom} alt="Banner 3" className='banner' />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={optom} alt="Banner 1" className='banner' />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={fonIptv} alt="Banner 1" className='banner' />
-          </SwiperSlide>
+            <img src={fonIptv} alt="Banner 4" className='banner' />
+          </SwiperSlide> */}
         </Swiper>
         <IonList className='selectBlock' lines="none">
           <div className='selectHome'>
@@ -376,7 +385,7 @@ const Main: React.FC = () => {
           <IonLabel slot='start'>
             Услуги
           </IonLabel>
-          <IonLabel slot='end' className='all'>
+          <IonLabel slot='end' className='all' onClick={goToAllServices}>
           Еще
           </IonLabel>
         </IonItem>
@@ -438,28 +447,28 @@ const Main: React.FC = () => {
           </IonLabel>
         </IonItem>
         <div className='flexServices'>
-          <IonCard color="primary" className='card1 first' onClick={goToInternet}>
+          <IonCard color="primary" className='card1 firstNews' onClick={() => goToNews('independence')}>
             <IonCardHeader>
-              <IonCardTitle>Internet</IonCardTitle>
+              {/* <IonCardTitle>Internet</IonCardTitle> */}
             </IonCardHeader>
 
-            <IonCardContent>Домашный Интернет</IonCardContent>
+            {/* <IonCardContent>Домашный Интернет</IonCardContent> */}
           </IonCard>
 
-          <IonCard color="secondary" className='card2' onClick={goToLte}>
+          <IonCard color="secondary" className='card2 twoNews' onClick={() => goToNews('gushtin')}>
             <IonCardHeader>
-              <IonCardTitle>LTE</IonCardTitle>
+              {/* <IonCardTitle>LTE</IonCardTitle> */}
             </IonCardHeader>
 
-            <IonCardContent>Беспроводной Интернет</IonCardContent>
+            {/* <IonCardContent>Беспроводной Интернет</IonCardContent> */}
           </IonCard>
 
-          <IonCard color="secondary" className='card2' onClick={goToTv}>
+          <IonCard color="secondary" className='card2 threeNews' onClick={() => goToNews('radio')}>
             <IonCardHeader>
-              <IonCardTitle>IPTV</IonCardTitle>
+              {/* <IonCardTitle>IPTV</IonCardTitle> */}
             </IonCardHeader>
 
-            <IonCardContent>Телевидение</IonCardContent>
+            {/* <IonCardContent>Телевидение</IonCardContent> */}
           </IonCard>
          
         </div>

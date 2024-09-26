@@ -24,7 +24,7 @@ const Lte: React.FC = () => {
             <IonHeader>
                 <IonToolbar className='BalanceToolbar'>
                     <IonButtons slot="start">
-                        <IonBackButton defaultHref="/main" />
+                        <IonBackButton defaultHref="/all_services" />
                     </IonButtons>
                     <IonTitle  className='title'>LTE</IonTitle>
                 </IonToolbar>

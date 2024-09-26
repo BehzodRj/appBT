@@ -49,6 +49,7 @@ import TariffsWithTraffic from './pages/Internet/TariffsWithTraffic';
 import Traffic from './pages/Internet/Traffic';
 import AutoPay from './pages/AutoPay/AutoPay';
 import Sotset from './pages/Sotset/Sotset';
+import AllService from './pages/AllService/AllService';
 
 setupIonicReact();
 
@@ -88,6 +89,8 @@ const App: React.FC = () => {
             <Route path="/with_traffic" component={()=><TariffsWithTraffic/>} />
             <Route path="/traffic" component={()=><Traffic/>} />
             <Route path="/autopay" component={()=><AutoPay/>} />
+            <Route path="/all_services" component={()=><AllService/>} />
+            <Route path="/news" component={()=><NewsOne/>} />
             {/* <Route path="/news" component={NewsOne} /> */}
 
             {/* <Route path="/folder/:name" exact={true}>
