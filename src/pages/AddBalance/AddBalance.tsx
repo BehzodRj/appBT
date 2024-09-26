@@ -80,7 +80,7 @@ const AddBalance: React.FC = () => {
           <IonTitle className="title">Пополнить баланс</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="container_addBalance">
         <IonCard className="card-info">
           <IonCardHeader className="header">Babilon T</IonCardHeader>
           <IonList lines="inset" class="list">
@@ -101,7 +101,7 @@ const AddBalance: React.FC = () => {
               </div>
             </IonItem>
 
-            <IonItem lines="none" className="item">
+            <IonItem lines="inset" className="item">
               <div className="item_native">
                 <IonLabel className="label">Сумма</IonLabel>
                 <IonInput
@@ -126,7 +126,7 @@ const AddBalance: React.FC = () => {
         </IonCard>
 
         <IonCard className="card-wallet">
-          <IonCardHeader className="header">Babilon T</IonCardHeader>
+          <IonCardHeader className="header">Способ оплаты</IonCardHeader>
           <IonList lines="inset" class="list">
             <IonRadioGroup value="0">
               <IonItem className="item">

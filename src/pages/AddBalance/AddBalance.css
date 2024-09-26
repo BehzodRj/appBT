@@ -13,28 +13,41 @@
     text-align: center;
 }
 
+.container_addBalance::part(background) {
+    background: #F4F4F4;
+}
+
 .card-info {
-    background: #216ac9;
-    margin: 10px;
+    background: #FFF;
+    margin: 16px;
     border-radius: 10px;
+    box-shadow: none;
 }
 
 .card-info .header {
     padding-bottom: 3px;
     font-size: 20px;
-    color: #FFF;
+    color: #000000;
 }
 
 .card-info .list,
 .card-info .item {
     padding: 0;
-    background: #216ac9;
-    --background: #216ac9;
+    background: transparent;
+    --background: transparent;
+}
+
+.card-info .list {
+    padding: 0 16px;
 }
 
 .card-info .list .item {
     margin-top: 5px;
     margin-bottom: 10px;
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+    --padding-end: 0;
+    --padding-start: 0;
 }
 
 .card-info .list .item .item_native {
@@ -44,14 +57,14 @@
 .card-info .list .item .item_native .label {
     padding: 0;
     margin: 0;
-    color: #FFF;
+    color: #000000;
 }
 
 .card-info .list .item .item_native .input {
     max-width: 100%;
     margin: 0;
     --padding-start: 0;
-    color: #FFF;
+    color: #000000;
 }
 
 .card-info .list .item .ps__span--tjs {
@@ -59,27 +72,39 @@
     margin: 0;
     display: flex;
     align-items: flex-end;
-    color: #FFF;
+    color: #000000;
 }
 
 
 .card-wallet {
-    background: #216ac9;
-    margin: 10px;
+    background: #FFF;
+    margin: 16px;
     border-radius: 10px;
+    box-shadow: none;
 }
 
 .card-wallet .header {
     padding-bottom: 3px;
     font-size: 20px;
-    color: #FFF;
+    color: #000000;
 }
 
 .card-wallet .list,
 .card-wallet .item {
     padding: 0;
-    background: #216ac9;
-    --background: #216ac9;
+    background: transparent;
+    --background: transparent;
+}
+
+.card-wallet .list {
+    padding: 0 16px;
+}
+
+.card-wallet .list .item {
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+    --padding-end: 0;
+    --padding-start: 0;
 }
 
 .card-wallet .list .item .item_native {
@@ -95,7 +120,7 @@
     font-weight: 400;
     font-size: 17px;
     letter-spacing: -0.408px;
-    color: #FFF;
+    color: #000000;
 }
 
 .card-wallet .list .item .item_native .info__block {
@@ -138,7 +163,8 @@
     padding: 16px;
     font-size: 14px;
     font-weight: 900;
-    color: #216ac9;
-    --background: #ffffff;
+    text-transform: uppercase;
+    color: #FFF;
+    --background: #01A944;
     --border-radius: 13px;
 }
