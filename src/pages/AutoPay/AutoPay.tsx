@@ -43,11 +43,11 @@ const AutoPay: React.FC = () => {
           voluptates aspernatur minus voluptas.
         </h1>
 
-        {/* <IonCard>
+        <IonCard>
             <IonItem>
                 
             </IonItem>
-        </IonCard> */}
+        </IonCard>
       </IonContent>
     </IonPage>
   );
