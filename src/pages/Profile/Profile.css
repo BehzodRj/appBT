@@ -196,17 +196,97 @@ ion-img.logoApp.md {
 
 .avatar {
     width: 100%;
-    /* display: flex; */
-    display: none;
+    display: grid;
+    justify-content: center;
+    /* display: none; */
+    background: #216ac9;
     text-align: center;
     justify-content: center;
-    padding-top: 14%;
+    padding-top: 5%;
     padding-bottom: 10%;
     
 }
-.avatar img {
-    max-width: 40%;
+.avatar ion-avatar {
+    width: 100%;
 }
+.avatar img {
+    /* max-width: 40%; */
+    width: 65px;
+    height: 65px;
+}
+
+.avatar .name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.avatar .phone {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    opacity: 70%;
+    padding-top: 10px;
+}
+
+.avatar .selectLs {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.09px;
+    text-align: center;
+    align-items:center;
+    margin-top: -5px;
+    margin-right: -20px;
+}
+.avatar .selectLs .mySelect {
+    width: 80px;
+    padding-left: 5px;
+}
+.avatar .select {
+    background: transparent !important;
+  
+ }
+ 
+
+ 
+ .avatar .select {
+     display: flex;
+     justify-content: space-evenly;
+     /* background:  #3D5BF6 !important; */
+     /* background:  #4261f5 !important; */
+     /* background:  #ffffff !important; */
+     /* background: #fff !important; */
+     /* color:#fff; */
+     color:#029ad6;
+ }
+ 
+ 
+ .avatar .selectLs .item {
+     /* --background:  #3D5BF6 !important; */
+     /* --background:  #4261f5 !important; */
+     /* --background:  #ffffff !important; */
+     /* color:#fff; */
+     /* color:#029ad6; */
+     color:#000000;
+     /* --background: #fff!important; */
+     /* color:#000; */
+     --background: transparent !important;
+ }
+ .avatar .selectLs .icon-inner {
+     color:#fff !important;
+ }
+ .avatar .select .textLS {
+     width: 140% !important;
+     font-size: 17px;
+ }
+
 
 .package{
     margin-bottom: -8px;

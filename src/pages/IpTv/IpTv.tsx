@@ -18,7 +18,7 @@ const IpTv: React.FC = () => {
             <IonHeader>
                 <IonToolbar className='BalanceToolbar'>
                     <IonButtons slot="start">
-                        <IonBackButton defaultHref="/main" />
+                        <IonBackButton defaultHref="/all_services" />
                     </IonButtons>
                     <IonTitle  className='title'>IPTV </IonTitle>
                 </IonToolbar>

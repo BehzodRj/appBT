@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonIcon, IonLoading } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonIcon, IonLoading, IonCard } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
 import axios from 'axios';  // импортируем axios
 
@@ -57,15 +57,18 @@ const TariffsDushanbe: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonList class='ListInternet'>
-                    {/* Выводим динамически загруженные тарифы */}
-                    {tariffs.map(tariff => (
-                        <IonItem key={tariff} onClick={() => goToLteEvo(tariff)}>
+                
+                {tariffs.map(tariff => (
+                <IonCard  key={tariff} onClick={() => goToLteEvo(tariff)}>
+                    <IonList className='ListInternet'>
+                        <IonItem lines='none'>
+                            {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
                             <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
                             <IonLabel>{tariff}</IonLabel>
                         </IonItem>
-                    ))}
-                </IonList>
+                    </IonList>
+                </IonCard>
+                  ))}
             </IonContent>
         </IonPage>
     );

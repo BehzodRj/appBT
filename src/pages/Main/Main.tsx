@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonMenuButton, IonNavLink, IonPage, IonRouterLink, IonSelect, IonSelectOption, IonTabBar, IonTabButton, IonTitle, IonToolbar } from '@ionic/react';
-import { globeOutline, home, mapSharp, personCircleOutline } from 'ionicons/icons';
+import { globeOutline, headsetOutline, home, mapSharp, personCircleOutline } from 'ionicons/icons';
 import Dashboard from '../Tariffs/Tariffs';
 import logoApp from '../../assets/img/whiteLogo.png';
 import { CapacitorHttp } from '@capacitor/core';
 import { useHistory, useParams } from 'react-router';
 import TabBar from '../../components/TabBar';
 import './Main.css';
-import optom from '../../assets/img/optom1.jpg';
+import optom from '../../assets/img/345.png';
+import fonIptv from '../../assets/img/iptvFon.png';
+import sotset from '../../assets/img/sotset.svg';
 import NewsOne from '../News/NewsOne';
 import AddBalance from '../AddBalance/AddBalance';
 import Menu from '../../components/Menu';
 import authService from '../../components/authService';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Main: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -22,6 +26,7 @@ const Main: React.FC = () => {
   const [balance, setBalance] = useState('');
   const [credit, setCredit] = useState('');
   const [status, setStatus] = useState('');
+  const [tarifName, setTarifName] = useState('');
   const [full_name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
@@ -38,7 +43,7 @@ const Main: React.FC = () => {
     history.push({
       pathname: '/add-balance',
       state: { selectedValue }  // Передаем имя тарифа через state
-  });
+    });
   };
   const goToAutoPay = () => {
     history.push('/autopay');
@@ -67,6 +72,9 @@ const Main: React.FC = () => {
   const goToHosting = () => {
     history.push('/hosting');
   };
+  const goToAllServices = () => {
+    history.push('/all_services');
+  };
 
 
   const toggleDetails = () => {
@@ -74,7 +82,12 @@ const Main: React.FC = () => {
   };
   console.log("Profileee");
 
-
+  const goToNews = (tariffName: string) => {
+    history.push({
+        pathname: '/news',
+        state: { tariffName }  // Передаем имя тарифа через state
+    });
+};
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -177,6 +190,16 @@ const Main: React.FC = () => {
 
     localStorage.setItem('user_ls', JSON.stringify(selectedValue));
     localStorage.setItem('balance', JSON.stringify(balance));
+    const getServiceName = (userId) => {
+      const userInfo = all_userInfo[userId];
+
+      if (userInfo) {
+        const service = userInfo.service_info.find(service => service.data?.type === 'iptraffic');
+        return service ? service.service_name : 'Тариф не найден';
+      }
+
+      return 'Пользователь не найден';
+    };
 
     Object.keys(all_userInfo).forEach((key) => {
       if (key == selectedValue + '') {
@@ -188,6 +211,11 @@ const Main: React.FC = () => {
         console.log("alllBall", balance);
         localStorage.setItem('balance', JSON.stringify(all_userInfo[selectedValue].balance.balance));
         // Создаем JSX элементы для каждого элемента массива service_info
+
+        // Получаем актуальное название тарифа
+        const serviceName = getServiceName(selectedValue);
+        setTarifName(serviceName);
+        console.log("Актуальное название тарифа:", serviceName);
 
       }
     })
@@ -205,7 +233,8 @@ const Main: React.FC = () => {
               <IonMenuButton />
             </IonButtons>
             {/* <IonLabel className='myBalance'>Баланс</IonLabel> */}
-            <IonLabel className='myIp'>Личный кабинет </IonLabel>
+            {/* <IonLabel className='myIp'>Главная </IonLabel> */}
+            <IonTitle  className='title'>Главная</IonTitle>
             <IonImg className='logoApp' slot="end" src={logoApp} alt="logo" ></IonImg>
             {/* <IonTitle className='myBalance'>Баланс <br />
             <IonLabel>12 TJS</IonLabel>
@@ -224,30 +253,32 @@ const Main: React.FC = () => {
           </IonLabel>
         </IonItem> */}
 
-        <div className='flexNews'>
-            <IonCard color="primary" className='card1'>
-              <IonCardHeader>
-                <IonCardTitle></IonCardTitle>
-                <IonCardSubtitle></IonCardSubtitle>
-              </IonCardHeader>
+        <Swiper className='someSviper'
+          spaceBetween={30}
+          slidesPerView={1.7}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
 
-              <IonCardContent></IonCardContent>
-            </IonCard>
+            <img src={optom} alt="Banner 1" className='banner' />
+          </SwiperSlide>
+          <SwiperSlide>
 
-          <IonCard color="secondary" className='card2'>
-            <IonCardHeader>
-              <IonCardTitle></IonCardTitle>
-              <IonCardSubtitle></IonCardSubtitle>
-            </IonCardHeader>
-
-            <IonCardContent> </IonCardContent>
-          </IonCard>
-        </div>
+            <img src={fonIptv} alt="Banner 2" className='banner' />
+          </SwiperSlide>
+          {/* <SwiperSlide>
+            <img src={optom} alt="Banner 3" className='banner' />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={fonIptv} alt="Banner 4" className='banner' />
+          </SwiperSlide> */}
+        </Swiper>
         <IonList className='selectBlock' lines="none">
           <div className='selectHome'>
             <IonItem className='textLS' lines="none">
               <IonLabel>
-                Ваш лицевой счет:
+                Лицевой счет:
               </IonLabel>
             </IonItem>
             <IonItem lines="none" slot='end'>
@@ -270,21 +301,32 @@ const Main: React.FC = () => {
             </IonItem>
             <IonItem lines="none" className='status' >
               <div className='Info-container'>
-                Статус: <br />
-                <label className={`text ${status === 'Активный' ? 'active' : 'inactive'}`}>
-                  {status}
+                Тариф: <br />
+                <label className={`text`}>
+                  {tarifName}
                 </label>
 
               </div>
             </IonItem>
             <IonItem lines="none" >
               <div className='Info-container'>
-                Активный кредит: <br />
-                <label className='text'>{credit}</label> TJS
+                Статус: <br />
+                <label className={`text`}>
+                  {status}
+                </label>
 
               </div>
-
             </IonItem>
+            {/* <IonItem lines="none" >
+              <div className='Info-container'>
+                Активный кредит: <br />
+                <label className='text'>{credit}</label> TJS
+ <label className={`text ${status === 'Активный' ? 'active' : 'inactive'}`}>
+                  {status}
+                </label>
+              </div>
+
+            </IonItem> */}
 
           </div>
           {/* <IonButton className="full-width" routerLink='/login'> Выход</IonButton> */}
@@ -340,8 +382,11 @@ const Main: React.FC = () => {
           </IonCard>
         </div> */}
         <IonItem className='SomeText' lines="none">
-          <IonLabel>
+          <IonLabel slot='start'>
             Услуги
+          </IonLabel>
+          <IonLabel slot='end' className='all' onClick={goToAllServices}>
+          Еще
           </IonLabel>
         </IonItem>
         <div className='flexServices'>
@@ -394,11 +439,40 @@ const Main: React.FC = () => {
           </IonCard> */}
         </div>
         <IonItem className='SomeText' lines="none">
-          <IonLabel>
-            Тех поддержа
+          <IonLabel slot='start'>
+            Новости
+          </IonLabel>
+          <IonLabel slot='end' className='all'>
+          Еще
           </IonLabel>
         </IonItem>
-        <div className='contact'>
+        <div className='flexServices'>
+          <IonCard color="primary" className='card1 firstNews' onClick={() => goToNews('independence')}>
+            <IonCardHeader>
+              {/* <IonCardTitle>Internet</IonCardTitle> */}
+            </IonCardHeader>
+
+            {/* <IonCardContent>Домашный Интернет</IonCardContent> */}
+          </IonCard>
+
+          <IonCard color="secondary" className='card2 twoNews' onClick={() => goToNews('gushtin')}>
+            <IonCardHeader>
+              {/* <IonCardTitle>LTE</IonCardTitle> */}
+            </IonCardHeader>
+
+            {/* <IonCardContent>Беспроводной Интернет</IonCardContent> */}
+          </IonCard>
+
+          <IonCard color="secondary" className='card2 threeNews' onClick={() => goToNews('radio')}>
+            <IonCardHeader>
+              {/* <IonCardTitle>IPTV</IonCardTitle> */}
+            </IonCardHeader>
+
+            {/* <IonCardContent>Телевидение</IonCardContent> */}
+          </IonCard>
+         
+        </div>
+        {/* <div className='contact'>
           <a href="tel:+992446006060">
             <IonCard color="secondary" className='card'>
               <IonCardHeader>
@@ -420,16 +494,16 @@ const Main: React.FC = () => {
             </IonCard>
           </a>
           <a href="https://webim.babilon-t.tj/client.php?locale=ru">
-             <IonCard color="secondary" className='card'>
-            <IonCardHeader>
-              <IonCardTitle>Live</IonCardTitle>
-            </IonCardHeader>
+            <IonCard color="secondary" className='card'>
+              <IonCardHeader>
+                <IonCardTitle>Live</IonCardTitle>
+              </IonCardHeader>
 
-            <IonCardContent>Онлайн чат</IonCardContent>
-          </IonCard>
+              <IonCardContent>Онлайн чат</IonCardContent>
+            </IonCard>
           </a>
-         
-        </div>
+
+        </div> */}
         {/* <IonItem className='SomeText' lines="none">
           <IonLabel>
             Новости
@@ -487,14 +561,18 @@ const Main: React.FC = () => {
           <IonLabel>Пакеты</IonLabel>
         </IonTabButton> */}
 
+        <IonTabButton tab="profile" href="/profile">
+          <IonIcon icon={personCircleOutline} />
+          <IonLabel>Профиль</IonLabel>
+        </IonTabButton>
         <IonTabButton tab="home" href="/main">
           <IonIcon icon={home} />
           <IonLabel>Главная</IonLabel>
         </IonTabButton>
 
-        <IonTabButton tab="profile" href="/profile">
-          <IonIcon icon={personCircleOutline} />
-          <IonLabel>Мой Профил</IonLabel>
+        <IonTabButton tab="sotset" href="/sotset">
+          <IonIcon icon={headsetOutline} src={sotset} />
+          <IonLabel>Поддержа</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonPage>

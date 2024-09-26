@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonList, IonTab, IonCard, IonImg, useIonLoading, IonLoading, IonSplitPane, IonRouterOutlet, IonButtons, IonMenuButton, IonBackButton, IonIcon } from '@ionic/react';
-import './Internet.css';
+import './AllService.css';
 import logoApp from '../../assets/img/whiteLogo.png';
 import axios from 'axios';
 import logo from '../../assets/img/whiteLogo.png';
@@ -10,20 +10,23 @@ import { CapacitorHttp, HttpResponse } from '@capacitor/core';
 import Menu from '../../components/Menu';
 import { chevronForwardOutline } from 'ionicons/icons';
 
-const Internet: React.FC = () => {
+const AllService: React.FC = () => {
     const history = useHistory();
-    const goToTarrifs = () => {
-        history.push('/tariffs');
-    };
-    const goToPakets = () => {
-        history.push('/package');
-    };
-    const goToTarifsForDushanbe = () => {
-        history.push('/tarifs_dushanbe');
-    };
-    const goToTarifsWithTraffic = () => {
-        history.push('/with_traffic');
-    };
+    const goToTv = () => {
+        history.push('/tv');
+      };
+      const goToTurbo = () => {
+        history.push('/turbo');
+      };
+      const goToLte = () => {
+        history.push('/lte');
+      };
+      const goToOptom = () => {
+        history.push('/optom');
+      };
+      const goToInternet = () => {
+        history.push('/internet');
+      };
 
     return (
 
@@ -32,36 +35,36 @@ const Internet: React.FC = () => {
             <IonHeader>
                 <IonToolbar className='BalanceToolbar'>
                     <IonButtons slot="start">
-                        <IonBackButton defaultHref="/all_services" />
+                        <IonBackButton defaultHref="/main" />
                     </IonButtons>
-                    <IonTitle className='title'>Интернет тарифы </IonTitle>
+                    <IonTitle className='title'>Все услуги </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
 
                 <IonCard>
                     <IonList className='ListInternet'>
-                        <IonItem onClick={goToTarrifs} lines='none'>
+                        <IonItem onClick={goToInternet} lines='none'>
                             {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
                             <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                            <IonLabel>Актуальные тарифы</IonLabel>
+                            <IonLabel>Internet</IonLabel>
                         </IonItem>
                     </IonList>
                 </IonCard>
                 <IonCard>
                     <IonList className='ListInternet'>
-                        <IonItem onClick={goToPakets} lines='none'>
+                        <IonItem onClick={goToLte} lines='none'>
                             {/* <IonIcon slot='end' src='../../assets/img/chevron-forward-outline.svg'></IonIcon> */}
                             <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                            <IonLabel>Актуальные пакеты</IonLabel>
+                            <IonLabel>LTE</IonLabel>
                         </IonItem>
                     </IonList>
                 </IonCard>
                 <IonCard>
                     <IonList className='ListInternet'>
-                        <IonItem onClick={goToTarifsForDushanbe} lines='none'>
+                        <IonItem onClick={goToTv} lines='none'>
                             <IonIcon slot='end' icon={chevronForwardOutline}></IonIcon>
-                            <IonLabel>Для города Душанбе</IonLabel>
+                            <IonLabel>IPTV</IonLabel>
                         </IonItem>
                     </IonList>
                 </IonCard>
@@ -81,4 +84,4 @@ const Internet: React.FC = () => {
     );
 };
 
-export default Internet;
+export default AllService;

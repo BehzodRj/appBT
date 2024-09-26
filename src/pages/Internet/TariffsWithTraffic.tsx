@@ -4,7 +4,7 @@ import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle, IonButtons, IonBa
 import { chevronForwardOutline } from 'ionicons/icons';
 import axios from 'axios';  // импортируем axios
 
-const TariffsDushanbe: React.FC = () => {
+const TariffsWithTraffic: React.FC = () => {
     const history = useHistory();
     
     // Состояния для хранения списка тарифов, состояния загрузки и ошибок
@@ -71,4 +71,4 @@ const TariffsDushanbe: React.FC = () => {
     );
 };
 
-export default TariffsDushanbe;
+export default TariffsWithTraffic;

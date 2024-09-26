@@ -13,7 +13,7 @@ import {
 } from '@ionic/react';
 
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, globeOutline, heartOutline, heartSharp, home, homeOutline, layersOutline, layersSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, personCircleOutline, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, globeOutline, headsetOutline, heartOutline, heartSharp, home, homeOutline, layersOutline, layersSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, personCircleOutline, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 import authService from './authService';
 
@@ -33,10 +33,16 @@ const appPages: AppPage[] = [
     mdIcon: homeOutline
   },
   {
-    title: 'Мой Профил',
+    title: 'Профиль',
     url: '/profile',
     iosIcon: personCircleOutline,
     mdIcon: personCircleOutline
+  },
+  {
+    title: 'Поддержка',
+    url: '/sotset',
+    iosIcon: headsetOutline,
+    mdIcon: headsetOutline
   }
 
 ];

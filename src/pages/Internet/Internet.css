@@ -1,13 +1,19 @@
 .ListInternet {
     background: #ffffff;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .ListInternet .item {
     --background: transparent;
     color: black;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
 }
 
 .ListInternet .item ion-icon {
     color:#a1a1a1;
+    width: 25px;
+    height: 25px;
 }

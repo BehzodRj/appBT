@@ -3,8 +3,8 @@ ion-menu ion-content {
 }
 
 ion-menu.md ion-content {
-  --padding-start: 8px;
-  --padding-end: 8px;
+  --padding-start: 0px;
+  --padding-end: 0px;
   --padding-top: 20px;
   --padding-bottom: 20px;
   --background:#ffffff !important;
@@ -16,6 +16,17 @@ ion-menu.md ion-content ion-list.ios {
 ion-menu ion-content::part(background) {
   background: #ffffff;
 }
+ion-menu.ios ion-content {
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --background:#ffffff !important;
+}
+/* ion-menu.ios ion-content ion-list.ios {
+  margin-top: 45px;
+ 
+} */
 
 ion-menu.md ion-list {
   padding: 20px 0;
@@ -41,6 +52,18 @@ ion-menu.md ion-list#inbox-list ion-list-header {
   min-height: 20px;
   color:#000000;
 }
+ion-menu.ios ion-list#inbox-list {
+  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+  height: 89vh;
+  background-color: #ffffff;
+}
+
+ion-menu.ios ion-list#inbox-list ion-list-header {
+  font-size: 22px;
+  font-weight: 600;
+  min-height: 20px;
+  color:#000000;
+}
 
 ion-menu.md ion-list#labels-list ion-list-header {
   font-size: 16px;
@@ -51,16 +74,21 @@ ion-menu.md ion-list#labels-list ion-list-header {
 }
 
 ion-menu.md ion-item {
-  --padding-start: 10px;
+  --padding-start: 15px;
   --padding-end: 10px;
   border-radius: 4px;
-  --background:#ffffff !important;
-  --background-color:#ffffff !important;
+  --background:#fff;
+  /* --background-color:#ffffff !important; */
   color:#000;
 }
 
 ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  /* --background: rgba(var(--ion-color-primary-rgb), 0.14); */
+  --background: #cecece;;
+}
+ion-menu.ios ion-item.selected {
+  /* --background: rgba(var(--ion-color-primary-rgb), 0.14); */
+  --background: #cecece;;
 }
 
 ion-menu.md ion-item.selected ion-icon {
@@ -81,7 +109,8 @@ ion-menu.ios ion-content {
 
 ion-menu.ios ion-list {
   padding: 20px 0 0 0;
-  margin-top: 45px;
+  /* margin-top: 45px; */
+  padding-top: 18%;
 }
 
 ion-menu.ios ion-note {
@@ -134,9 +163,9 @@ ion-menu .full-width {
   height: 45px;
   --background-color:transparent;
 }
-ion-menu .full-width.ios {
+/* ion-menu .full-width.ios {
   margin-top: 190%;
-}
+} */
 
 
 .errorTariffs {
