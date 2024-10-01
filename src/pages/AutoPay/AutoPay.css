@@ -1,11 +1,20 @@
 
-.card, .card .item {
+.container_autoPay::part(background) {
+    background: #F4F4F4;
+}
+
+.card__toggle{
+    margin: 16px 16px 0px 16px;
+    box-shadow: 0px 4px 9.2px 2px #BAB8B847;
+}
+
+.card__toggle, .card__toggle .item {
     padding: 4px 0;
     background: #FFF;
     --background: #FFF;
 }
 
-.card .item .label {
+.card__toggle .item .label {
     padding: 0;
     margin: 0;
     font-size: 18px;
@@ -19,4 +28,61 @@
     font-size: 14px;
     font-weight: 400;
     color: #979797;
+}
+
+.card__credit-cards {
+    box-shadow: 0px 4px 9.2px 2px #BAB8B847;
+    margin: 0 16px;
+}
+
+.card__credit-cards .list {
+    margin: 0;
+    padding: 16px 16px 0 16px;
+}
+
+.card__credit-cards .list .item {
+    --inner-padding-start: 0;
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-bottom: 16px;
+}
+
+.card__credit-cards .list .item {
+    margin-bottom: 16px;
+}
+
+.card__credit-cards .list .item .img {
+    width: 70px;
+    height: 44px;
+}
+
+.card__credit-cards .card__info {
+    margin: 0 10px;
+}
+
+.card__credit-cards .card__info h1, .card__credit-cards .card__info h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.card__credit-cards .card__info h2 {
+    margin-top: 5px;
+}
+
+.add-card__button {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFF;
+    --background: #01A944;
+    --border-radius: 8px;
+    --box-shadow: none;
 }

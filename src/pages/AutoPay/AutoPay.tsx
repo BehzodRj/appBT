@@ -11,9 +11,12 @@ import {
   IonBackButton,
   IonCard,
   IonToggle,
-  IonText,
+  IonImg,
+  IonList,
+  IonButton,
 } from "@ionic/react";
 import "./AutoPay.css";
+import card from "../../assets/autopay/cards.svg";
 
 const AutoPay: React.FC = () => {
   return (
@@ -26,8 +29,8 @@ const AutoPay: React.FC = () => {
           <IonTitle className="title">Автоплатеж</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <IonCard className="card">
+      <IonContent className="container_autoPay">
+        <IonCard className="card__toggle">
           <IonItem lines="none" className="item">
             <IonToggle slot="end" class="toggle" color="success"></IonToggle>
             <IonLabel slot="start" className="label">
@@ -43,11 +46,29 @@ const AutoPay: React.FC = () => {
           voluptates aspernatur minus voluptas.
         </h1>
 
-        <IonCard>
-            <IonItem>
-                
+        <IonCard className="card__credit-cards">
+          <IonList lines="full" className="list">
+            <IonItem className="item">
+              <IonImg className="img" src={card}></IonImg>
+
+              <div className="card__info">
+                <h1>VISA Digital</h1>
+                <h2>5058 **** **** 2214</h2>
+              </div>
             </IonItem>
+
+            <IonItem className="item">
+              <IonImg className="img" src={card}></IonImg>
+
+              <div className="card__info">
+                <h1>VISA Digital</h1>
+                <h2>5058 **** **** 2214</h2>
+              </div>
+            </IonItem>
+          </IonList>
         </IonCard>
+
+        <IonButton className="add-card__button">Добавить карту</IonButton>
       </IonContent>
     </IonPage>
   );

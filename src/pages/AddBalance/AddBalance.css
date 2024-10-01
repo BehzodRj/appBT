@@ -18,36 +18,38 @@
 }
 
 .card-info {
-    background: #FFF;
     margin: 16px;
-    border-radius: 10px;
+    padding: 16px 0;
+    border-radius: 8px;
+    background: #FFF;
     box-shadow: none;
 }
 
 .card-info .header {
-    padding-bottom: 3px;
+    padding: 0px 16px 8px 16px;
     font-size: 20px;
     color: #000000;
-}
-
-.card-info .list,
-.card-info .item {
-    padding: 0;
-    background: transparent;
-    --background: transparent;
 }
 
 .card-info .list {
     padding: 0 16px;
 }
 
+.card-info .list,
+.card-info .item {
+    background: transparent;
+    --background: transparent;
+}
+
 .card-info .list .item {
-    margin-top: 5px;
-    margin-bottom: 10px;
     --inner-padding-end: 0;
     --inner-padding-start: 0;
     --padding-end: 0;
     --padding-start: 0;
+}
+
+.card-info .list .item:nth-child(2) {
+    margin-top: 8px;
 }
 
 .card-info .list .item .item_native {
@@ -63,6 +65,7 @@
 .card-info .list .item .item_native .input {
     max-width: 100%;
     margin: 0;
+    padding: 10px 0px 8px 0px;
     --padding-start: 0;
     color: #000000;
 }
@@ -79,7 +82,7 @@
 .card-wallet {
     background: #FFF;
     margin: 16px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: none;
 }
 
@@ -166,5 +169,6 @@
     text-transform: uppercase;
     color: #FFF;
     --background: #01A944;
-    --border-radius: 13px;
+    --border-radius: 8px;
+    --box-shadow: none;
 }
